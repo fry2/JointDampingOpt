@@ -17,6 +17,8 @@ function maxJM = NW_jointmotion_maxtrial_all(kinematic_data,toplot)
         if jj==1
             % The largest trial entry for the IP is incorrect
             trial = 10;
+        elseif jj == 6
+            trial = 12;
         end
         maxWaves{jj} = NWangs_from_markers(jj,trial,kinematic_data);
             temp = max(maxWaves{jj}(272:330,:))>maxBounds;

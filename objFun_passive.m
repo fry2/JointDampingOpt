@@ -38,7 +38,13 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
         
     % Import the Joint Motion data from the output .txt file
         jointMotionPath = [pwd,'\JointMotion_',jobID,'.txt'];
-        ds = importdata(jointMotionPath);
+        try 
+            ds = importdata(jointMotionPath);
+        catch
+            outVal = 1e9;
+            jointMotion = [];
+            return
+        end
         jointMotion = ds.data(:,3:5).*(180/pi);
         
         temp(:,1) = jointMotion(1:end-9,find(contains(ds.colheaders,'Hip'))-2);
@@ -61,12 +67,23 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
 %         selInds = [48:196,startInd:endInd];
 %         diffVec = NWmotion(selInds,:)-jointMotion(selInds,:);
         diffVec = NWmotion-jointMotion;
+        diff2 = NWmotion(171:204,:)-jointMotion(171:204,:);
+        diff3 = NWmotion(316:minLen,:)-jointMotion(316:minLen,:);
+        diff4 = (NWmotion(181,:)-NWmotion(173,:))/(181-173)-(jointMotion(181,:)-jointMotion(173,:))/(181-173);
+        diff5 = NWmotion(172,:)-jointMotion(172,:);
+        
+        sum_square = @(inMat) sum(sum((inMat).^2));
         
         if strcmp(joint2grade,'all')
-            outVal = sum(sum((diffVec).^2));
+            outVec = [sum_square(diffVec), 5*sum_square(diff2), 4*sum_square(diff3), 3000*sum_square(diff4), 100*sum_square(diff5)];
+            outVal = sum(outVec);
         else
             outVal = sum(sum((diffVec(:,joint2grade)).^2));
         end
         
         delete(jointMotionPath,jobSavePath)
+        
+%     function damping = find_damp(waveform)
+%         
+%     end
 end

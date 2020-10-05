@@ -391,9 +391,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>1.04</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>133.904</Kse>
+<Kpe>5681.33</Kpe>
+<B>40.7016</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -445,7 +445,7 @@
 <MaximumTension>11.28</MaximumTension>
 <Kse>20.2988</Kse>
 <Kpe>122.892</Kpe>
-<B>96.9612</B>
+<B>34.051</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -495,8 +495,8 @@
 </LengthTension>
 <MaximumTension>9.23</MaximumTension>
 <Kse>20.2988</Kse>
-<Kpe>122.892</Kpe>
-<B>96.9612</B>
+<Kpe>8165.67</Kpe>
+<B>97.8097</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -545,9 +545,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>1.55</MaximumTension>
-<Kse>47.4517</Kse>
-<Kpe>373.955</Kpe>
-<B>3.5011</B>
+<Kse>877.133</Kse>
+<Kpe>7020.82</Kpe>
+<B>6.8979</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -735,8 +735,8 @@
 </LengthTension>
 <MaximumTension>4.93</MaximumTension>
 <Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kpe>8589.58</Kpe>
+<B>44.666</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -877,9 +877,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>7.39</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>15.9576</Kse>
+<Kpe>1947.06</Kpe>
+<B>48.0799</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1066,9 +1066,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>4.54</MaximumTension>
-<Kse>47.4517</Kse>
+<Kse>65.5536</Kse>
 <Kpe>373.955</Kpe>
-<B>3.5011</B>
+<B>5.2689</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1119,7 +1119,7 @@
 <MaximumTension>3.89</MaximumTension>
 <Kse>20.2988</Kse>
 <Kpe>122.892</Kpe>
-<B>96.9612</B>
+<B>99.6128</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1168,9 +1168,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>7.17</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>7950.75</Kse>
+<Kpe>3376.95</Kpe>
+<B>65.972</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1219,13 +1219,13 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>11.14</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>2421.62</Kse>
+<Kpe>379.388</Kpe>
+<B>50.6423</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
-<Name>GemellusSuperiorOrigin Pelvis LH_HipZ Ext</Name>
+<Name>GemellusSuperiorOrigin Pelvis LH_HipZ Flx</Name>
 <ID>7714e34d-600b-472c-91f7-ced1e6ff7c9c</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
@@ -1409,9 +1409,9 @@
 <MinPeLength>0.01</MinPeLength>
 </LengthTension>
 <MaximumTension>12.49</MaximumTension>
-<Kse>47.4517</Kse>
+<Kse>29.3497</Kse>
 <Kpe>373.955</Kpe>
-<B>3.5011</B>
+<B>18.1662</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1508,9 +1508,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>16.47</MaximumTension>
-<Kse>9199.89</Kse>
+<Kse>3439.89</Kse>
 <Kpe>1135.24</Kpe>
-<B>33.3891</B>
+<B>39.5319</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1619,7 +1619,7 @@
 <IsVisible>True</IsVisible>
 <Enabled>True</Enabled>
 <Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
-<Diffuse Red="0" Green="1" Blue="0" Alpha="1"/>
+<Diffuse Red="1" Green="0" Blue="0" Alpha="1"/>
 <Attachments>
 <AttachID>7714e34d-600b-472c-91f7-ced1e6ff7c9c</AttachID>
 <AttachID>a2b89547-edf9-424d-9ada-96daa3e0439a</AttachID>
@@ -1651,9 +1651,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>5</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>20.2988</Kse>
+<Kpe>122.892</Kpe>
+<B>3.6978</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -1987,9 +1987,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>2.06</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>1971.34</Kse>
+<Kpe>379.388</Kpe>
+<B>60.5035</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -2094,7 +2094,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>faac87b6-0acd-43b6-923b-b1bfa8670ff6</ID>
+<ID>08bdac61-66c2-4109-9f28-b5c7aa561fde</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -2104,7 +2104,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>3cc0ee72-6c7a-4a4b-a6a3-693855ba9ab5</ID>
+<ID>6fe5e1bc-c115-4a7d-b9cc-eb767975796b</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -2194,9 +2194,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>14.87</MaximumTension>
-<Kse>9199.89</Kse>
-<Kpe>1135.24</Kpe>
-<B>33.3891</B>
+<Kse>1872.22</Kse>
+<Kpe>1263.24</Kpe>
+<B>30.5674</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -2760,9 +2760,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>2.55</MaximumTension>
-<Kse>9199.89</Kse>
-<Kpe>1135.24</Kpe>
-<B>33.3891</B>
+<Kse>8731.38</Kse>
+<Kpe>1263.24</Kpe>
+<B>29.1969</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -3051,7 +3051,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>c574fdc5-674d-4ef6-959a-c02b40ed2004</ID>
+<ID>65ad1b23-6823-4c08-bae2-82bdbdddc367</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -3061,7 +3061,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>863cff59-a2a5-496d-85ea-5952ad46cd8a</ID>
+<ID>f36e8e11-7b66-4a7b-add2-d0187f229bbe</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -3382,8 +3382,8 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>0.44</MaximumTension>
-<Kse>425.507</Kse>
-<Kpe>122.627</Kpe>
+<Kse>7730.6</Kse>
+<Kpe>7427.72</Kpe>
 <B>1.6968</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
@@ -3714,7 +3714,7 @@
 <MaximumTension>2.21</MaximumTension>
 <Kse>1948.15</Kse>
 <Kpe>81.8981</Kpe>
-<B>13.5395</B>
+<B>22.9776</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -4051,7 +4051,7 @@
 <MaximumTension>8.6</MaximumTension>
 <Kse>1948.15</Kse>
 <Kpe>81.8981</Kpe>
-<B>13.5395</B>
+<B>13.7895</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -4248,7 +4248,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>968b2734-7388-4b30-bf84-e6cdf9099da1</ID>
+<ID>7efc42e0-dfe9-4c21-b536-6facd892ea18</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -4258,7 +4258,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>b0a06086-0a8c-4ae7-a870-a4bd11422ed4</ID>
+<ID>0580777e-7cd1-4249-aff2-2f0a4fa79300</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -5371,8 +5371,8 @@
 </LengthTension>
 <MaximumTension>1.42</MaximumTension>
 <Kse>425.507</Kse>
-<Kpe>122.627</Kpe>
-<B>1.6968</B>
+<Kpe>250.627</Kpe>
+<B>1.9468</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -5985,7 +5985,7 @@
 <MaximumTension>3.54</MaximumTension>
 <Kse>425.507</Kse>
 <Kpe>122.627</Kpe>
-<B>1.6968</B>
+<B>3.4646</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 </ChildBodies>
@@ -6049,7 +6049,7 @@
 <MaximumTension>2.92</MaximumTension>
 <Kse>425.507</Kse>
 <Kpe>122.627</Kpe>
-<B>1.6968</B>
+<B>0.82582</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -6200,9 +6200,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>6.08</MaximumTension>
-<Kse>9199.89</Kse>
-<Kpe>1135.24</Kpe>
-<B>33.3891</B>
+<Kse>9839.89</Kse>
+<Kpe>4335.24</Kpe>
+<B>44.2309</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -6252,7 +6252,7 @@
 <Scale x="1" y="1" z="1"/>
 </RigidBody>
 <RigidBody>
-<Name>GemellusSuperiorIns Femur LH_HipZ Ext</Name>
+<Name>GemellusSuperiorIns Femur LH_HipZ Flx</Name>
 <ID>a2b89547-edf9-424d-9ada-96daa3e0439a</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
@@ -7282,7 +7282,7 @@
 </LengthTension>
 <MaximumTension>3.02</MaximumTension>
 <Kse>47.4517</Kse>
-<Kpe>373.955</Kpe>
+<Kpe>5493.96</Kpe>
 <B>3.5011</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
@@ -7332,8 +7332,8 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>10.22</MaximumTension>
-<Kse>47.4517</Kse>
-<Kpe>373.955</Kpe>
+<Kse>8532.52</Kse>
+<Kpe>1941.63</Kpe>
 <B>3.5011</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
@@ -7429,9 +7429,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>12.21</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>1711.38</Kse>
+<Kpe>379.388</Kpe>
+<B>60.9772</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -7712,9 +7712,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>10</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>47.4517</Kse>
+<Kpe>373.955</Kpe>
+<B>96.7017</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -7764,8 +7764,8 @@
 </LengthTension>
 <MaximumTension>2.85</MaximumTension>
 <Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kpe>7887.9</Kpe>
+<B>6.7575</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -7908,7 +7908,7 @@
 <MaximumTension>2.35</MaximumTension>
 <Kse>47.4517</Kse>
 <Kpe>373.955</Kpe>
-<B>3.5011</B>
+<B>5.2689</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -8004,8 +8004,8 @@
 </LengthTension>
 <MaximumTension>3.01</MaximumTension>
 <Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kpe>3315.53</Kpe>
+<B>15.722</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -8054,9 +8054,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>18.74</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>1696.85</Kse>
+<Kpe>379.388</Kpe>
+<B>97.1576</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -8105,9 +8105,9 @@
 <MinPeLength>5</MinPeLength>
 </LengthTension>
 <MaximumTension>3</MaximumTension>
-<Kse>1.1774</Kse>
-<Kpe>1302.59</Kpe>
-<B>94.6236</B>
+<Kse>3326.71</Kse>
+<Kpe>379.388</Kpe>
+<B>34.972</B>
 <IbDischarge>100</IbDischarge>
 </RigidBody>
 <RigidBody>
@@ -12188,18 +12188,18 @@
 <DataColumn>
 <ModuleName/>
 <Type>DataColumn</Type>
-<ID>7c0d8458-73e9-4b38-84ec-d3228940903a</ID>
-<ColumnName>LH_BicepsFemorisAnterior</ColumnName>
-<DataType>Tension</DataType>
-<TargetID>cd5c9307-8391-4d2f-a347-2fec20f8dbe2</TargetID>
+<ID>87496feb-6c96-4ac7-b178-5c9a80194b1b</ID>
+<ColumnName>LH_TensorFasciaLatae</ColumnName>
+<DataType>Activation</DataType>
+<TargetID>61daa261-279a-4540-bb7e-026174d96daa</TargetID>
 </DataColumn>
 <DataColumn>
 <ModuleName/>
 <Type>DataColumn</Type>
-<ID>ec0d3091-8a3d-4764-b1ba-5eddde05bd22</ID>
-<ColumnName>LH_BicepsFemorisAnterior</ColumnName>
-<DataType>Tension</DataType>
-<TargetID>cd5c9307-8391-4d2f-a347-2fec20f8dbe2</TargetID>
+<ID>8d028f7a-a413-4b42-a64f-93b2269b45cb</ID>
+<ColumnName>neur8</ColumnName>
+<DataType>MembraneVoltage</DataType>
+<TargetID>neur8-ID</TargetID>
 </DataColumn>
 </DataColumns>
 </DataChart>
@@ -12211,8 +12211,8 @@
 <HudItem>
 <ModuleName/>
 <Type>HudText</Type>
-<Name>34e7d228-4571-4cb6-a427-0dc428142ed3</Name>
-<ID>34e7d228-4571-4cb6-a427-0dc428142ed3</ID>
+<Name>e51007e4-921e-48f2-93c7-6e4f9a6348fe</Name>
+<ID>e51007e4-921e-48f2-93c7-6e4f9a6348fe</ID>
 <Type>HudText</Type>
 <CharSize>30</CharSize>
 <Text>Time: %3.3f</Text>

@@ -40,6 +40,10 @@ stimLevel = 20;
 [passVals,mInfo,fVal,history] = passive_opt_for_zones(simText,reshapedJM,passVals,stimLevel,maxTimeTrial,input6zones,out6zones,ts);
 %% Now that we have passive values, we need to analyze their effectiveness at recreating NW waveforms
     outJM = cell(1,7); pvG_grades_new = zeros(1,7);
+    if 0
+        passVals = pvStruct.pvGlobal38;
+        mInfo = zoning_sorter(simText,38);
+    end
     for ii = 1:7
         NWmotion_temp = reshapedJM{ii};
         stimLevel = 20;
@@ -70,16 +74,27 @@ return
 %% Individual trial jointMotion and NWmotion
     trial = 3;
     NWmotion = (reshapedJM{trial}-[98.4373 102.226 116.2473]).*(pi/180);
+    NWmotion = reshapedJM{trial};
     jointMotion = outJM{trial};
-    dt = .54e-3;
+    dt = .01;
     timeVec = 0:dt:((length(NWmotion)-1)*dt);
 
-    figure('Position',[962,2,958,994]); subp(1) = subplot(2,1,1); joints = 1:3; startInd = 1; endInd = min([length(NWmotion) length(jointMotion)]);
-    plot(timeVec(startInd:endInd),NWmotion(startInd:endInd,joints),'LineWidth',2);legend({'Hip';'Knee';'Ankle'});%ylim([60 200]);
-    title([kinematic_muscle_name{1,trial},' Desired Joint Motion']); ylabel('Joint Angle (deg)');xlabel('Time (s)');
+    figure('Position',[962,2,958,994]); 
+    subp(1) = subplot(2,1,1); joints = 1:3; startInd = 1; endInd = min([length(NWmotion) length(jointMotion)]);
+        plot(timeVec(startInd:endInd),NWmotion(startInd:endInd,joints),'LineWidth',2);
+        legend({'Hip';'Knee';'Ankle'},'Location','northwest');
+        title([kinematic_muscle_name{1,trial},' Desired Joint Motion']); 
+        ylabel('Joint Angle (deg)');
+        xlabel('Time (s)');
+        xlim([0 max(timeVec)])
+        ylim([80 160]);
     subp(2) = subplot(2,1,2);
-    plot(timeVec(startInd:endInd),jointMotion(startInd:endInd,joints),'LineWidth',2);
-    ylim([60 200]);title('Simulation Results');ylabel('Joint Angle (deg)');xlabel('Time (s)');%xlim([0 max(timeVec)])
+        plot(timeVec(startInd:endInd),jointMotion(startInd:endInd,joints),'LineWidth',2);
+        ylim([60 200]);title('Simulation Results');
+        ylabel('Joint Angle (deg)');
+        xlabel('Time (s)');
+        xlim([0 max(timeVec)])
+        ylim([80 160]);
 %% All trials in green black subplot
     figure('Position',[962,2,958,994])
     startInd = 273; endInd = 358;%endInd = min([length(NWmotion) length(jointMotion)]);
@@ -92,14 +107,14 @@ return
         if max([reshapedJM{ii};outJM{ii}],[],'all') > yLims(2)
             yLims(2) = max([reshapedJM{ii};outJM{ii}],[],'all');
         end
-    end   
+    end     
     for ii = 1:7
         subplot(7,1,ii)
         plot(reshapedJM{ii},'g','LineWidth',2)
         hold on
         plot(outJM{ii},'k','LineWidth',2)
         ylim(yLims)
-        title([kinematic_muscle_name{1,ii},' ',num2str(pvStruct.pvGlobal_grades(ii))])
+        title([kinematic_muscle_name{1,ii},' ',num2str(round(pvG_grades_new(ii)))])
     end
 %% Scatter plot of muscle values
     figure
@@ -109,7 +124,7 @@ return
           0,0,1;...
           1,0,1;...
           0,1,1];
-    switch 0
+    switch 1
         case 1
             muscVals = reshape(pvStruct.pvGlobal38,3,38)';
             mTemp = zoning_sorter(simText,6);
@@ -120,9 +135,10 @@ return
             error('error')
     end
     for ii = 1:size(muscVals,1)
-        scatter3(muscVals(ii,1),muscVals(ii,2),muscVals(ii,3),36,cm(mTemp{ii,2},:),'o','LineWidth',5)
+        scatter3(muscVals(ii,1),muscVals(ii,2),muscVals(ii,3),36,cm(mTemp{ii,2},:),'o','LineWidth',10)
         hold on
     end
     pbaspect([1 1 1])
-    view([-56 16])
-    xlabel('B'); ylabel('Ks'), zlabel('Kp')
+    view([-43 18])
+    title('Passive Muscle Parameters')
+    xlabel('B (Ns/m)','FontSize',18); ylabel('Ks (N/m)','FontSize',18), zlabel('Kp (N/m)','FontSize',18)

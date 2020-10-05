@@ -2,7 +2,7 @@ function [outScore,outVal] = objFun_whole_leg_passive(inVec,NWmotion,mInfo,stimL
     kinematic_muscle_name(1,:) = lower({'LH_Illiopsoas','LH_GemellusSuperior','LH_SemitendinosusPrincipal',...
         'LH_SemitendinosusAccessory','LH_VastusLateralis','LH_BicepsFemorisPosterior','LH_BicepsFemorisAnterior'});
     val2test = 1:7; outVal = zeros(1,length(val2test)); 
-    parfor jj = 1:length(val2test)
+    for jj = 1:length(val2test)
         ii = val2test(jj);
         %NWmotion_temp = NW_baseliner(ii,[],kinematic_data,'max');
         NWmotion_temp = NWmotion{ii};
