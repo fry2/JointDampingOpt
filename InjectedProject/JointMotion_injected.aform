@@ -11,7 +11,7 @@
 <UpdateDataInterval Value="0.01" Scale="None" Actual="0.01"/>
 <SetStartEndTime>True</SetStartEndTime>
 <CollectStartTime Value="0" Scale="None" Actual="0"/>
-<CollectEndTime Value="3.65" Scale="None" Actual="3.65"/>
+<CollectEndTime Value="3.66" Scale="None" Actual="3.66"/>
 <AxisList>
 <Axis>
 <AssemblyFile>LicensedAnimatGUI.dll</AssemblyFile>

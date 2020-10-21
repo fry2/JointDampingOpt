@@ -9,11 +9,11 @@ function [corrFig,cdata1] = createCorrFig(cdata1,sorted)
         cdata1(isnan(cdata1))=-5;
     end
     
-    if a ~= b
-        if b ~= 1
-            error('Input matrix must be square. Run B = corr(A,A) then use B as input.')
-        end
-    end
+%     if a ~= b
+%         if b ~= 1
+%             error('Input matrix must be square. Run B = corr(A,A) then use B as input.')
+%         end
+%     end
     
     if nargin == 1
         sorted = 0;

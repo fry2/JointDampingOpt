@@ -1,4 +1,4 @@
-function [passVals,mInfo,fVal,history] = passive_opt_for_zones(simText,NWmotion,initialPoint,stimLevel,maxTime,input6zones,out6zones,ts)
+function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NWmotion,initialPoint,stimLevel,maxTime,input6zones,out6zones,ts)
     % Set up the passive nonlinear condition, which needs muscle information from the simText
     if ~input6zones
         mInfo = zoning_sorter(simText,38);
@@ -31,16 +31,23 @@ function [passVals,mInfo,fVal,history] = passive_opt_for_zones(simText,NWmotion,
         mInfo{muscNum,5} = str2double(extractBetween(string(simText{fMax_ind}),'>','</'));
     end
     numZones = length(unique(cell2mat(mInfo(:,2))));
-
-    passive_nonlcon_wrap = @(x) passive_nonlcon(x,mInfo,numZones);
-
+    
+    physTS = double(extractBetween(string(simText{contains(simText,'<PhysicsTimeStep>')}),'>','<'));
+    passive_nonlcon_wrap = @(x) passive_nonlcon(x,physTS);
+    
+    aplacer = 1:3:38*3;
+    for ii = 1:38
+        A(ii,aplacer(ii):aplacer(ii)+2) = [-2, physTS, physTS];
+    end
+    b = zeros(38,1);
+    
     ub = repmat([1e2 1e4 1e4],1,numZones);
     lb = repmat([1e-3 1 1],1,numZones);
 
     fun_pass = @(inVec) objFun_whole_leg_passive(inVec,NWmotion,mInfo,stimLevel,ts);
-    pattOpts = optimoptions('patternsearch','UseParallel',true,'InitialMeshSize',50,...  
-        'Display','iter','MaxTime',maxTime*60,'SearchFcn','MADSPositiveBasis2N','UseCompleteSearch',true,'OutputFcn',@outfun);
-    [passVals,fVal] = patternsearch(fun_pass,initialPoint,[],[],[],[],lb,ub,[],pattOpts);%passive_nonlcon_wrap
+    pattOpts = optimoptions('patternsearch','UseParallel',true,'InitialMeshSize',37.5,'MaxTime',maxTime*60,...  
+        'Display','iter','SearchFcn','MADSPositiveBasis2N','UseCompleteSearch',true,'OutputFcn',@outfun);%'MaxTime',maxTime*60;,'MaxFunctionEvaluations',100;
+    [passVals,fVal,~,output] = patternsearch(fun_pass,initialPoint,A,b,[],[],lb,ub,[],pattOpts);%passive_nonlcon_wrap
 
     delete([pwd,'\tp*'],...
            [pwd,'\JointMotion_*'],...

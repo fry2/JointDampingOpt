@@ -3,7 +3,7 @@ function [NWbaselined,trial] = NW_baseliner(mnum,trial,kinematic_data,modifier,m
     % Input: mnum: int: number of muscle from the data
     % Input: trial: int: number of trial from the data
     % Input: modifier: char ('all','max'): indicates if all trials should be considered for the muscle
-    % Input: meanEnd: char ('tailalign'): decides which indices should be used to determine the waveform mean
+    % Input: meanEnd: char ('frontalign','tailalign'): decides which indices should be used to determine the waveform mean
     [~,numtrials,minLen] = NWangs_from_markers(mnum,1,kinematic_data);
     
     if nargin < 5
@@ -39,26 +39,29 @@ function [NWbaselined,trial] = NW_baseliner(mnum,trial,kinematic_data,modifier,m
     
     if length(trial) > 1
         NWbaselined = cell(3,1);
-        motionRaw = zeros(minLen,numtrials);
+        motionRaw = [];
+        counter = 1;
         for ii = trial
-            temp = NWangs_from_markers(mnum,ii,kinematic_data);
-            if isempty(temp)
-                % there is NAN data in this trial
-                motionRaw(:,ii) = NaN;
-            else
+            temp = NWangs_from_markers(mnum,ii,kinematic_data); 
+            if ~isempty(temp)
                 for jj = 1:3
-                    motionRaw(:,ii,jj) = temp(1:minLen,jj);
+                    motionRaw(:,counter,jj) = temp(1:minLen,jj);
                 end
+                counter = counter + 1;
             end
         end
         for jj = 1:3
-            if strcmp(meanEnd,'tailalign')
-                meanInds = 321:351;
+            if ~isempty(meanEnd)
+                if strcmp(meanEnd,'tailalign')
+                    meanInds = 321:351;
+                elseif strcmp(meanEnd,'frontalign')
+                    meanInds = 26:212;
+                end
+                indivmeans = mean(motionRaw(meanInds,:,jj));
+                NWbaselined{jj} = (motionRaw(:,:,jj)-indivmeans)+nanmean(indivmeans);
             else
-                meanInds = 26:212;
+                NWbaselined{jj} = motionRaw(:,:,jj);
             end
-            indivmeans = mean(motionRaw(meanInds,:,jj));
-            NWbaselined{jj} = (motionRaw(:,:,jj)-indivmeans)+nanmean(indivmeans);
         end
     else
         temp = NWangs_from_markers(mnum,trial,kinematic_data);

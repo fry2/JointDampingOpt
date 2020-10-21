@@ -1,7 +1,10 @@
 function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
-    simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_Standalone.asim';
+    %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_Standalone.asim';
+    simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_compAnkle_Standalone.asim';
     %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject\JointDampingOpt_passVals.asim';
-    simText = importdata(simPath);
+    temp = load([pwd,'/sensSimData.mat'],'sensSimData_ank');
+    simText= temp.sensSimData_ank;
+    %simText = importdata(simPath);
     freq = 100; dt = 1/freq;
 
     % Start by turning off all tonic stimuli
@@ -24,15 +27,16 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     stimID = ['<ID>stTC1-',parGetOut{1},'</ID>'];
 %     stimTime0 = 2.29;
 %     stimTime1 = 2.79; %find way to set these automatically based on ang waveform
-    stimTime0 = dt*(length(NWmotion)-47);
-    stimTime1 = dt*(length(NWmotion)+3);
+    stimTime0  = dt*(length(NWmotion)-45);
+    stimTime1  = dt*(length(NWmotion)+17);
+    simEndTime = dt*(length(NWmotion)+17);
     %physTS = dt/10;
     physTS = .54e-3;
     timeVec = 0:dt:((length(NWmotion)-1)*dt);
 
     % The system level parameters we want to modify in the ASIM file organized as:
     % parameter string to find, line modifier from that string, value to set it to
-    parSet = {'<SimEndTime>',0,((length(NWmotion)+17)*dt);...
+    parSet = {'<SimEndTime>',0,simEndTime;...
               '<PhysicsTimeStep>',0,physTS;...
               '<ID>1b1bb75a-f9ae-4839-8124-5172f1dbddcf</ID>',8,((length(NWmotion)+16)*dt);...
               '<ID>1b1bb75a-f9ae-4839-8124-5172f1dbddcf</ID>',9,dt;...
@@ -68,9 +72,9 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     end
 
     % Set constant position stimulus
-    cPosInd = 173;
+    cPosInd = 157;
     cpStart = dt*(ts.cpstart+3);
-    cpEnd = dt*(ts.cpend+3);
+    cpEnd = dt*(ts.cpend+5);
     simText = set_const_pos_stim(simText,cPos,NWmotion(cPosInd,:),cpStart,cpEnd);
 
     function simText = set_const_pos_stim(simText,toggle,inPos,stimTime0,stimTime1)
@@ -92,7 +96,8 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
                     uVal = double((extractBetween(string(uLine),'>','<')));
                 end
                 if constPos(ii) < lVal || constPos(ii) > uVal
-                    error(['Trying to set constant motor position outside joint limits ',jInfo{ii,2}])
+                    error(['Trying to set constant motor position, ',num2str((180/pi)*constPos(ii)),', outside joint limits [',num2str((180/pi)*lVal),',',...
+                        num2str((180/pi)*uVal),'] for joint',jInfo{ii,2}])
                 end
             end
             for ii = 1:length(sInds)

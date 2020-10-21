@@ -76,7 +76,7 @@ pb.command(shellcmd);
 process = pb.start();
 
 %% Read output from the process
-
+% You can't make this faster
 out = read_inputstream(process.getInputStream());
 err = read_inputstream(process.getErrorStream());
 

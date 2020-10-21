@@ -29,15 +29,38 @@ catch
 end
 
 passVals = pvGlobal_old;
-maxTimeTrial = 45; %in min
-maxJM = NW_jointmotion_maxtrial_all(kinematic_data,0);
-reshapedJM = cell(1,7); ts = cell(1,7);
+maxTimeTrial = 20; %in min
+
+%% Generate the input waveforms for eahc muscle and trial that you want the optimizer to follow
+[maxJM,maxtrial] = NW_jointmotion_maxtrial_all(kinematic_data,0);
+clear reshapedJM
 for ii = 1:7
-    [reshapedJM{ii},ts{ii}] = NW_reshaper(maxJM{ii});
+    temp = NW_baseliner(ii,15,kinematic_data,'all','frontalign');
+    meanMat(ii,:) = [mean(temp{1}(1:200)),mean(temp{2}(1:200)),mean(temp{3}(1:200))];
+    %trials2test = 4:maxtrial(ii);
+    trials2test = maxtrial(ii);
+    counter = 1;
+    for jj = trials2test
+        expJM{ii,counter} = [temp{1}(:,jj),temp{2}(:,jj),temp{3}(:,jj)];
+        [reshapedJM{ii,counter}, ts{ii,counter}] = NW_reshaper(expJM{ii,counter});
+        counter = counter + 1;
+    end
 end
+
+meanIntro = mean(meanMat);
+maxtrial = sum(~cellfun(@isempty,reshapedJM),2);
+for ii = 1:7
+    maxTail = (reshapedJM{ii,maxtrial(ii)}(ts{ii,maxtrial(ii)}.tcstart:end,:)-meanMat(ii,:))+meanIntro;
+    for jj = 1:maxtrial(ii)
+        temp = (reshapedJM{ii,jj}-meanMat(ii,:))+meanIntro;
+        reshapedJM{ii,jj} = [temp(1:ts{ii,jj}.tcstart,:);maxTail];
+    end
+end
+
+%% Begin the Optimization process
 stimLevel = 20;
 [simText,stimID] = simText_editor(kinematic_muscle_name{2,1},reshapedJM{1},'on',ts{1});
-[passVals,mInfo,fVal,history] = passive_opt_for_zones(simText,reshapedJM,passVals,stimLevel,maxTimeTrial,input6zones,out6zones,ts);
+[passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,reshapedJM,passVals,stimLevel,maxTimeTrial,input6zones,out6zones,ts);
 %% Now that we have passive values, we need to analyze their effectiveness at recreating NW waveforms
     outJM = cell(1,7); pvG_grades_new = zeros(1,7);
     if 0
@@ -45,7 +68,7 @@ stimLevel = 20;
         mInfo = zoning_sorter(simText,38);
     end
     for ii = 1:7
-        NWmotion_temp = reshapedJM{ii};
+        NWmotion_temp = reshapedJM{ii,maxtrial(ii)};
         stimLevel = 20;
         if ~any(isnan(NWmotion_temp),'all')
             [simText,stimID] = simText_editor(kinematic_muscle_name{2,ii},NWmotion_temp,'on',ts{ii});
@@ -97,22 +120,24 @@ return
         ylim([80 160]);
 %% All trials in green black subplot
     figure('Position',[962,2,958,994])
-    startInd = 273; endInd = 358;%endInd = min([length(NWmotion) length(jointMotion)]);
-    selInds = [48:196,startInd:endInd];
-    yLims = [min([reshapedJM{1};outJM{1}],[],'all') max([reshapedJM{1};outJM{1}],[],'all')];
+    startInd = 1; endInd = 358;%endInd = min([length(NWmotion) length(jointMotion)]);
+    yLims = [min([reshapedJM{1,maxtrial(ii)};outJM{1}],[],'all') max([reshapedJM{1,maxtrial(ii)};outJM{1}],[],'all')];
     for ii = 2:7
-        if min([reshapedJM{ii};outJM{ii}],[],'all') < yLims(1)
-            yLims(1) = min([reshapedJM{ii};outJM{ii}],[],'all');
+        rMax = reshapedJM{ii,maxtrial(ii)};
+        % Find the ylim bounds based on the maximum values from all the trials to plot
+        if min([rMax;outJM{ii}],[],'all') < yLims(1)
+            yLims(1) = min([rMax;outJM{ii}],[],'all');
         end
-        if max([reshapedJM{ii};outJM{ii}],[],'all') > yLims(2)
-            yLims(2) = max([reshapedJM{ii};outJM{ii}],[],'all');
+        if max([rMax;outJM{ii}],[],'all') > yLims(2)
+            yLims(2) = max([rMax;outJM{ii}],[],'all');
         end
     end     
     for ii = 1:7
+        rMax = reshapedJM{ii,maxtrial(ii)}; 
         subplot(7,1,ii)
-        plot(reshapedJM{ii},'g','LineWidth',2)
+        plot(rMax(startInd:endInd,:),'g','LineWidth',2)
         hold on
-        plot(outJM{ii},'k','LineWidth',2)
+        plot(outJM{ii}(startInd:endInd,:),'k','LineWidth',2)
         ylim(yLims)
         title([kinematic_muscle_name{1,ii},' ',num2str(round(pvG_grades_new(ii)))])
     end

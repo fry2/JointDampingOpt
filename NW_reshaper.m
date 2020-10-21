@@ -1,7 +1,16 @@
 function [outMat,ts] = NW_reshaper(inMat)
     meanStart = mean(inMat(1:200,:));
-    point_waveStart = 224;
-    point_peak = 274;
+    sigMag = sum((inMat-meanStart).^2,2);
+    [~,locs] = findpeaks(flip(sigMag),'MinPeakHeight',.2*max(sigMag));
+    point_peak = length(sigMag)-locs(1)+1;
+    slopeNum = 7;
+    for ii = 1:length(sigMag)-slopeNum
+        slopes(ii) = (sigMag(ii+slopeNum)-sigMag(ii))/slopeNum;
+    end
+    [~,point_waveStart] = max(slopes);
+    while sigMag(point_waveStart) > sigMag(point_waveStart-1)
+        point_waveStart = point_waveStart - 1;
+    end
     point_end = length(inMat);
     outMat = [inMat(point_peak:point_end,:);...
                inMat(point_end,:).*ones(50,3);...
@@ -13,6 +22,6 @@ function [outMat,ts] = NW_reshaper(inMat)
     ts = struct();
     ts.cpstart = floor(.85*temp);
     ts.cpend = temp;
-    ts.tcstart = length(outMat)-50;
+    ts.tcstart = length(outMat)-(point_peak-point_waveStart);
     ts.tcend = length(outMat);
 end

@@ -67,23 +67,23 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
 %         selInds = [48:196,startInd:endInd];
 %         diffVec = NWmotion(selInds,:)-jointMotion(selInds,:);
         diffVec = NWmotion-jointMotion;
-        diff2 = NWmotion(171:204,:)-jointMotion(171:204,:);
-        diff3 = NWmotion(316:minLen,:)-jointMotion(316:minLen,:);
+        diff2 = NWmotion(171:265,:)-jointMotion(171:265,:);
+        diff3 = NWmotion(315:minLen,:)-jointMotion(315:minLen,:);
         diff4 = (NWmotion(181,:)-NWmotion(173,:))/(181-173)-(jointMotion(181,:)-jointMotion(173,:))/(181-173);
-        diff5 = NWmotion(172,:)-jointMotion(172,:);
+        diff5 = NWmotion(183,:)-jointMotion(183,:);
+        diff6 = NWmotion(325,:)-jointMotion(325,:);
         
         sum_square = @(inMat) sum(sum((inMat).^2));
         
         if strcmp(joint2grade,'all')
-            outVec = [sum_square(diffVec), 5*sum_square(diff2), 4*sum_square(diff3), 3000*sum_square(diff4), 100*sum_square(diff5)];
-            outVal = sum(outVec);
+            outVec = [sum_square(diffVec), sum_square(diff2), sum_square(diff3), sum_square(diff4), sum_square(diff5),...
+                sum_square(diff6)];
+            outVecWt = outVec.*[1,7,7,2500,90,90];
+            outVal = sum(outVecWt);
         else
             outVal = sum(sum((diffVec(:,joint2grade)).^2));
         end
         
         delete(jointMotionPath,jobSavePath)
-        
-%     function damping = find_damp(waveform)
-%         
-%     end
+        %figure;plot(NWmotion);hold on;plot(jointMotion)
 end

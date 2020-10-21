@@ -1,4 +1,4 @@
-function maxJM = NW_jointmotion_maxtrial_all(kinematic_data,toplot)
+function [maxJM,maxtrial] = NW_jointmotion_maxtrial_all(kinematic_data,toplot)
     % For input kinematic data, output a cell with the joint motion from its largest trial without NaN values in it
     offsetter = zeros(36,3);
     maxBounds = zeros(1,3);
@@ -21,6 +21,7 @@ function maxJM = NW_jointmotion_maxtrial_all(kinematic_data,toplot)
             trial = 12;
         end
         maxWaves{jj} = NWangs_from_markers(jj,trial,kinematic_data);
+        maxtrial(jj) = trial;
             temp = max(maxWaves{jj}(272:330,:))>maxBounds;
             maxBounds(temp) = max(maxWaves{jj}((272:330),temp));
             temp = min(maxWaves{jj}(272:330,:))<minBounds;

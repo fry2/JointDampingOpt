@@ -22,6 +22,18 @@ function [NWmotion,numtrials,minLen] = NWangs_from_markers(mnum,trial,kinematic_
             v2 = mkSimp(jj+1,:)-mkSimp(jj,:);
             NWmotion(nn,jj-1) = real((180/pi)*acos(dot(v1,v2)/(norm(v1(1:2))*norm(v2(1:2)))));
         end
+        if 0 && ii > 220 && ii < 300
+            clf
+            plot3(mkSimp(:,1),mkSimp(:,2),mkSimp(:,3))
+            title(num2str(ii))
+            hold on
+            axis('equal')
+            xlim([0 350])
+            ylim([-350 160])
+            view([0 90])
+            grid on
+            pause(.1)
+        end
         nn = nn +1;
     end
     

@@ -13,7 +13,7 @@
 <EnableSimRecording>True</EnableSimRecording>
 <SetSimEnd>True</SetSimEnd>
 <APIFile/>
-<SimEndTime Value="3.66" Scale="None" Actual="3.66"/>
+<SimEndTime Value="3.67" Scale="None" Actual="3.67"/>
 <PlaybackControlMode>FastestPossible</PlaybackControlMode>
 <PresetPlaybackTimeStep Value="3" Scale="milli" Actual="0.003"/>
 <Environment>
@@ -576,9 +576,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="1.04" Scale="None" Actual="1.04"/>
-<Kse Value="8219.8923" Scale="None" Actual="8219.8923"/>
-<Kpe Value="5672.1385" Scale="None" Actual="5672.1385"/>
-<B Value="98.7369" Scale="None" Actual="98.7369"/>
+<Kse Value="8924.0832" Scale="None" Actual="8924.0832"/>
+<Kpe Value="4549.3005" Scale="None" Actual="4549.3005"/>
+<B Value="99.4437" Scale="None" Actual="99.4437"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -645,8 +645,8 @@
 </LengthTension>
 <MaximumTension Value="11.28" Scale="None" Actual="11.28"/>
 <Kse Value="20.2988" Scale="None" Actual="20.2988"/>
-<Kpe Value="253.5426" Scale="None" Actual="253.5426"/>
-<B Value="23.0154" Scale="None" Actual="23.0154"/>
+<Kpe Value="275.3638" Scale="None" Actual="275.3638"/>
+<B Value="20.7077" Scale="None" Actual="20.7077"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -711,9 +711,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="9.23" Scale="None" Actual="9.23"/>
-<Kse Value="13.8988" Scale="None" Actual="13.8988"/>
-<Kpe Value="5194.425" Scale="None" Actual="5194.425"/>
-<B Value="41.7334" Scale="None" Actual="41.7334"/>
+<Kse Value="2447.8298" Scale="None" Actual="2447.8298"/>
+<Kpe Value="19.6171" Scale="None" Actual="19.6171"/>
+<B Value="46.6988" Scale="None" Actual="46.6988"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -778,9 +778,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="1.55" Scale="None" Actual="1.55"/>
-<Kse Value="857.9325" Scale="None" Actual="857.9325"/>
-<Kpe Value="2147.7698" Scale="None" Actual="2147.7698"/>
-<B Value="3.9583" Scale="None" Actual="3.9583"/>
+<Kse Value="836.0815" Scale="None" Actual="836.0815"/>
+<Kpe Value="689.5605" Scale="None" Actual="689.5605"/>
+<B Value="1.4583" Scale="None" Actual="1.4583"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -1052,9 +1052,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="4.93" Scale="None" Actual="4.93"/>
-<Kse Value="141.9774" Scale="None" Actual="141.9774"/>
-<Kpe Value="8881.9223" Scale="None" Actual="8881.9223"/>
-<B Value="3.029" Scale="None" Actual="3.029"/>
+<Kse Value="2822.3811" Scale="None" Actual="2822.3811"/>
+<Kpe Value="9009.9219" Scale="None" Actual="9009.9219"/>
+<B Value="41.5757" Scale="None" Actual="41.5757"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -1257,9 +1257,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="7.39" Scale="None" Actual="7.39"/>
-<Kse Value="43.1105" Scale="None" Actual="43.1105"/>
-<Kpe Value="2056.8223" Scale="None" Actual="2056.8223"/>
-<B Value="94.5213" Scale="None" Actual="94.5213"/>
+<Kse Value="52.1614" Scale="None" Actual="52.1614"/>
+<Kpe Value="9152.425" Scale="None" Actual="9152.425"/>
+<B Value="3.1746" Scale="None" Actual="3.1746"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -1281,15 +1281,15 @@
 <Texture/>
 <LocalPosition>
 <X Value="-14.922" Scale="milli" Actual="-0.014922"/>
-<Y Value="-9.069" Scale="milli" Actual="-0.009069"/>
-<Z Value="1.275" Scale="milli" Actual="0.001275"/>
+<Y Value="-10.319" Scale="milli" Actual="-0.010319"/>
+<Z Value="1.129" Scale="milli" Actual="0.001129"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.14922,-0.09069,0.01275,1</LocalMatrix>
+<LocalMatrix>1,1.38778e-017,-9.7795e-017,0,-3.46945e-017,1,-1.04083e-017,0,1.22732e-016,3.46945e-018,1,0,-0.14922,-0.103186,0.0112851,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -1532,8 +1532,8 @@
 </LengthTension>
 <MaximumTension Value="4.54" Scale="None" Actual="4.54"/>
 <Kse Value="65.5536" Scale="None" Actual="65.5536"/>
-<Kpe Value="404.8573" Scale="None" Actual="404.8573"/>
-<B Value="4.519" Scale="None" Actual="4.519"/>
+<Kpe Value="361.1553" Scale="None" Actual="361.1553"/>
+<B Value="2.7335" Scale="None" Actual="2.7335"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -1599,8 +1599,8 @@
 </LengthTension>
 <MaximumTension Value="3.89" Scale="None" Actual="3.89"/>
 <Kse Value="20.2988" Scale="None" Actual="20.2988"/>
-<Kpe Value="116.4916" Scale="None" Actual="116.4916"/>
-<B Value="95.4582" Scale="None" Actual="95.4582"/>
+<Kpe Value="646.685" Scale="None" Actual="646.685"/>
+<B Value="96.1802" Scale="None" Actual="96.1802"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -1665,9 +1665,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="7.17" Scale="None" Actual="7.17"/>
-<Kse Value="88.1688" Scale="None" Actual="88.1688"/>
-<Kpe Value="9276.7384" Scale="None" Actual="9276.7384"/>
-<B Value="44.2522" Scale="None" Actual="44.2522"/>
+<Kse Value="4707.229" Scale="None" Actual="4707.229"/>
+<Kpe Value="6281.7661" Scale="None" Actual="6281.7661"/>
+<B Value="75.0022" Scale="None" Actual="75.0022"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -1732,9 +1732,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="11.14" Scale="None" Actual="11.14"/>
-<Kse Value="901.1149" Scale="None" Actual="901.1149"/>
-<Kpe Value="9997.5813" Scale="None" Actual="9997.5813"/>
-<B Value="5.339" Scale="None" Actual="5.339"/>
+<Kse Value="9323.7884" Scale="None" Actual="9323.7884"/>
+<Kpe Value="1844.815" Scale="None" Actual="1844.815"/>
+<B Value="88.5741" Scale="None" Actual="88.5741"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -2009,7 +2009,7 @@
 <MaximumTension Value="12.49" Scale="None" Actual="12.49"/>
 <Kse Value="29.3497" Scale="None" Actual="29.3497"/>
 <Kpe Value="373.9553" Scale="None" Actual="373.9553"/>
-<B Value="5.3096" Scale="None" Actual="5.3096"/>
+<B Value="13.8805" Scale="None" Actual="13.8805"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -2145,9 +2145,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="16.47" Scale="None" Actual="16.47"/>
-<Kse Value="1757.6971" Scale="None" Actual="1757.6971"/>
+<Kse Value="1657.6971" Scale="None" Actual="1657.6971"/>
 <Kpe Value="1263.2392" Scale="None" Actual="1263.2392"/>
-<B Value="13.443" Scale="None" Actual="13.443"/>
+<B Value="19.5478" Scale="None" Actual="19.5478"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -2352,7 +2352,7 @@
 <MaximumTension Value="5" Scale="None" Actual="5"/>
 <Kse Value="20.2988" Scale="None" Actual="20.2988"/>
 <Kpe Value="122.8916" Scale="None" Actual="122.8916"/>
-<B Value="2.43" Scale="None" Actual="2.43"/>
+<B Value="2.1005" Scale="None" Actual="2.1005"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -2628,7 +2628,7 @@
 <MaximumTension Value="4.54" Scale="None" Actual="4.54"/>
 <Kse Value="47.4517" Scale="None" Actual="47.4517"/>
 <Kpe Value="373.9553" Scale="None" Actual="373.9553"/>
-<B Value="1.7333" Scale="None" Actual="1.7333"/>
+<B Value="2.2333" Scale="None" Actual="2.2333"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -2833,9 +2833,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="2.06" Scale="None" Actual="2.06"/>
-<Kse Value="892.7569" Scale="None" Actual="892.7569"/>
-<Kpe Value="8845.5813" Scale="None" Actual="8845.5813"/>
-<B Value="3.3792" Scale="None" Actual="3.3792"/>
+<Kse Value="685.4331" Scale="None" Actual="685.4331"/>
+<Kpe Value="9080.195" Scale="None" Actual="9080.195"/>
+<B Value="4.142" Scale="None" Actual="4.142"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -2976,7 +2976,7 @@
 <Relaxation5>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>44bd2ff8-0a54-4fce-857a-f0a9d10aa371</ID>
+<ID>529da50a-3fca-44d2-bd1a-d9a66a39491a</ID>
 <Enabled>False</Enabled>
 <CoordinateID>4</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -2985,7 +2985,7 @@
 <Relaxation6>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>08bdac61-66c2-4109-9f28-b5c7aa561fde</ID>
+<ID>4f7c6b8c-637c-4df6-bab6-414f68e743c6</ID>
 <Enabled>False</Enabled>
 <CoordinateID>5</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -3006,7 +3006,7 @@
 <LowerLimit>
 <Name>82082205-6db6-4c04-af54-a42cced50e61</Name>
 <ID>82082205-6db6-4c04-af54-a42cced50e61</ID>
-<LimitPos Value="-3.5" Scale="None" Actual="-3.5"/>
+<LimitPos Value="-10" Scale="None" Actual="-10"/>
 <Damping Value="30" Scale="None" Actual="30"/>
 <Restitution Value="0.01" Scale="None" Actual="0.01"/>
 <Stiffness Value="0.01" Scale="None" Actual="0.01"/>
@@ -3014,7 +3014,7 @@
 <UpperLimit>
 <Name>a9d6c2db-1833-47b8-a00b-ba446cf8ee29</Name>
 <ID>a9d6c2db-1833-47b8-a00b-ba446cf8ee29</ID>
-<LimitPos Value="15" Scale="None" Actual="15"/>
+<LimitPos Value="16" Scale="None" Actual="16"/>
 <Damping Value="0.1" Scale="None" Actual="0.1"/>
 <Restitution Value="0.01" Scale="None" Actual="0.01"/>
 <Stiffness Value="0.01" Scale="None" Actual="0.01"/>
@@ -3106,9 +3106,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="14.87" Scale="None" Actual="14.87"/>
-<Kse Value="1872.217" Scale="None" Actual="1872.217"/>
-<Kpe Value="2141.0458" Scale="None" Actual="2141.0458"/>
-<B Value="33.674" Scale="None" Actual="33.674"/>
+<Kse Value="62.0236" Scale="None" Actual="62.0236"/>
+<Kpe Value="2397.0458" Scale="None" Actual="2397.0458"/>
+<B Value="48.5406" Scale="None" Actual="48.5406"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -3520,8 +3520,8 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="11.64" Scale="None" Actual="11.64"/>
-<Kse Value="425.5065" Scale="None" Actual="425.5065"/>
-<Kpe Value="122.6274" Scale="None" Actual="122.6274"/>
+<Kse Value="1133.0731" Scale="None" Actual="1133.0731"/>
+<Kpe Value="5065.2542" Scale="None" Actual="5065.2542"/>
 <B Value="1.6968" Scale="None" Actual="1.6968"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
@@ -3934,9 +3934,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="2.55" Scale="None" Actual="2.55"/>
-<Kse Value="9764.4746" Scale="None" Actual="9764.4746"/>
-<Kpe Value="1263.2392" Scale="None" Actual="1263.2392"/>
-<B Value="33.7325" Scale="None" Actual="33.7325"/>
+<Kse Value="7396.7978" Scale="None" Actual="7396.7978"/>
+<Kpe Value="1391.2392" Scale="None" Actual="1391.2392"/>
+<B Value="54.9314" Scale="None" Actual="54.9314"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -4353,7 +4353,7 @@
 <Relaxation5>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>52a5547b-8f36-4cea-afa3-d8eccf8bbf27</ID>
+<ID>f63a1201-dd5f-455d-913e-e7ddf4ca9ac6</ID>
 <Enabled>False</Enabled>
 <CoordinateID>4</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -4362,7 +4362,7 @@
 <Relaxation6>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>65ad1b23-6823-4c08-bae2-82bdbdddc367</ID>
+<ID>5315aeb6-aa61-4ba0-b4ec-0e28b2634a9a</ID>
 <Enabled>False</Enabled>
 <CoordinateID>5</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -4383,7 +4383,7 @@
 <LowerLimit>
 <Name>abcb0a99-8144-49f1-b4a6-46e488badf9d</Name>
 <ID>abcb0a99-8144-49f1-b4a6-46e488badf9d</ID>
-<LimitPos Value="-20" Scale="None" Actual="-20"/>
+<LimitPos Value="-25" Scale="None" Actual="-25"/>
 <Damping Value="0.1" Scale="None" Actual="0.1"/>
 <Restitution Value="0.01" Scale="None" Actual="0.01"/>
 <Stiffness Value="0.01" Scale="None" Actual="0.01"/>
@@ -4391,7 +4391,7 @@
 <UpperLimit>
 <Name>3a8c13b0-99eb-4705-84d1-05672e9cbf8d</Name>
 <ID>3a8c13b0-99eb-4705-84d1-05672e9cbf8d</ID>
-<LimitPos Value="21.774" Scale="None" Actual="21.774"/>
+<LimitPos Value="25" Scale="None" Actual="25"/>
 <Damping Value="50" Scale="None" Actual="50"/>
 <Restitution Value="0.4" Scale="None" Actual="0.4"/>
 <Stiffness Value="0.01" Scale="None" Actual="0.01"/>
@@ -4829,9 +4829,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="0.44" Scale="None" Actual="0.44"/>
-<Kse Value="1586.6032" Scale="None" Actual="1586.6032"/>
-<Kpe Value="6522.6274" Scale="None" Actual="6522.6274"/>
-<B Value="1.6968" Scale="None" Actual="1.6968"/>
+<Kse Value="334.603" Scale="None" Actual="334.603"/>
+<Kpe Value="9987.7239" Scale="None" Actual="9987.7239"/>
+<B Value="2.8197" Scale="None" Actual="2.8197"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -5317,9 +5317,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="2.21" Scale="None" Actual="2.21"/>
-<Kse Value="2076.148" Scale="None" Actual="2076.148"/>
+<Kse Value="1545.9546" Scale="None" Actual="1545.9546"/>
 <Kpe Value="81.8981" Scale="None" Actual="81.8981"/>
-<B Value="30.1921" Scale="None" Actual="30.1921"/>
+<B Value="9.7111" Scale="None" Actual="9.7111"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -5456,9 +5456,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="3.96" Scale="None" Actual="3.96"/>
-<Kse Value="553.5065" Scale="None" Actual="553.5065"/>
-<Kpe Value="378.6274" Scale="None" Actual="378.6274"/>
-<B Value="1.6968" Scale="None" Actual="1.6968"/>
+<Kse Value="23.3131" Scale="None" Actual="23.3131"/>
+<Kpe Value="9928.5572" Scale="None" Actual="9928.5572"/>
+<B Value="3.0788" Scale="None" Actual="3.0788"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -5801,9 +5801,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="8.6" Scale="None" Actual="8.6"/>
-<Kse Value="2076.148" Scale="None" Actual="2076.148"/>
+<Kse Value="796.148" Scale="None" Actual="796.148"/>
 <Kpe Value="81.8981" Scale="None" Actual="81.8981"/>
-<B Value="15.325" Scale="None" Actual="15.325"/>
+<B Value="0.70065" Scale="None" Actual="0.70065"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -6082,7 +6082,7 @@
 <Relaxation5>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>bed69eb7-e8a4-43ac-a77a-241c7c836fe3</ID>
+<ID>c7f10ac7-6b50-4cbd-a636-c96ab863b059</ID>
 <Enabled>False</Enabled>
 <CoordinateID>4</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -6091,7 +6091,7 @@
 <Relaxation6>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>7efc42e0-dfe9-4c21-b536-6facd892ea18</ID>
+<ID>d1a96d27-6559-4973-adc7-4984c76738e0</ID>
 <Enabled>False</Enabled>
 <CoordinateID>5</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -7744,9 +7744,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="1.42" Scale="None" Actual="1.42"/>
-<Kse Value="425.5065" Scale="None" Actual="425.5065"/>
-<Kpe Value="3560.4341" Scale="None" Actual="3560.4341"/>
-<B Value="1.9468" Scale="None" Actual="1.9468"/>
+<Kse Value="151.3131" Scale="None" Actual="151.3131"/>
+<Kpe Value="9928.5572" Scale="None" Actual="9928.5572"/>
+<B Value="3.5889" Scale="None" Actual="3.5889"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -7884,8 +7884,8 @@
 </LengthTension>
 <MaximumTension Value="11.02" Scale="None" Actual="11.02"/>
 <Kse Value="425.5065" Scale="None" Actual="425.5065"/>
-<Kpe Value="4090.6274" Scale="None" Actual="4090.6274"/>
-<B Value="1.6968" Scale="None" Actual="1.6968"/>
+<Kpe Value="7555.7241" Scale="None" Actual="7555.7241"/>
+<B Value="2.1968" Scale="None" Actual="2.1968"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -8644,7 +8644,7 @@
 <MaximumTension Value="3.54" Scale="None" Actual="3.54"/>
 <Kse Value="553.5065" Scale="None" Actual="553.5065"/>
 <Kpe Value="122.6274" Scale="None" Actual="122.6274"/>
-<B Value="3.4646" Scale="None" Actual="3.4646"/>
+<B Value="1.2146" Scale="None" Actual="1.2146"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 </ChildBodies>
@@ -8722,9 +8722,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="2.92" Scale="None" Actual="2.92"/>
-<Kse Value="1056.4098" Scale="None" Actual="1056.4098"/>
+<Kse Value="6944.4098" Scale="None" Actual="6944.4098"/>
 <Kpe Value="122.6274" Scale="None" Actual="122.6274"/>
-<B Value="0.82582" Scale="None" Actual="0.82582"/>
+<B Value="9.1824" Scale="None" Actual="9.1824"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -8792,8 +8792,8 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="5.61" Scale="None" Actual="5.61"/>
-<Kse Value="425.5065" Scale="None" Actual="425.5065"/>
-<Kpe Value="5525.9175" Scale="None" Actual="5525.9175"/>
+<Kse Value="681.5065" Scale="None" Actual="681.5065"/>
+<Kpe Value="5251.7241" Scale="None" Actual="5251.7241"/>
 <B Value="1.6968" Scale="None" Actual="1.6968"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
@@ -8815,16 +8815,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-1.643" Scale="milli" Actual="-0.001643"/>
+<X Value="-2.031" Scale="milli" Actual="-0.002031"/>
 <Y Value="-4.425" Scale="milli" Actual="-0.004425"/>
-<Z Value="3.5" Scale="milli" Actual="0.0035"/>
+<Z Value="4.2" Scale="milli" Actual="0.0042"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.01643,-0.04425,0.035,1</LocalMatrix>
+<LocalMatrix>1,1.11022e-016,-6.93889e-017,0,-1.21875e-032,1,4.85723e-017,0,3.46945e-017,-1.00614e-016,1,0,-0.0203072,-0.04425,0.0420047,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -8931,8 +8931,8 @@
 </LengthTension>
 <MaximumTension Value="6.08" Scale="None" Actual="6.08"/>
 <Kse Value="9839.8904" Scale="None" Actual="9839.8904"/>
-<Kpe Value="2525.0458" Scale="None" Actual="2525.0458"/>
-<B Value="60.5888" Scale="None" Actual="60.5888"/>
+<Kpe Value="5240.3359" Scale="None" Actual="5240.3359"/>
+<B Value="99.571" Scale="None" Actual="99.571"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -9211,8 +9211,8 @@
 </LengthTension>
 <MaximumTension Value="18.26" Scale="None" Actual="18.26"/>
 <Kse Value="425.5065" Scale="None" Actual="425.5065"/>
-<Kpe Value="5653.9175" Scale="None" Actual="5653.9175"/>
-<B Value="1.6968" Scale="None" Actual="1.6968"/>
+<Kpe Value="9777.2075" Scale="None" Actual="9777.2075"/>
+<B Value="3.4646" Scale="None" Actual="3.4646"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -9371,7 +9371,7 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-2.287" Scale="milli" Actual="-0.002287"/>
+<X Value="-2.697" Scale="milli" Actual="-0.002697"/>
 <Y Value="-0.82" Scale="milli" Actual="-0.00082"/>
 <Z Value="4.022" Scale="milli" Actual="0.004022"/>
 </LocalPosition>
@@ -9380,7 +9380,7 @@
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.02287,-0.0082,0.04022,1</LocalMatrix>
+<LocalMatrix>1,0,-8.67362e-017,0,1.66533e-016,1,-5.89806e-017,0,3.46945e-017,1.73472e-017,1,0,-0.0269704,-0.0082,0.04022,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -10531,8 +10531,8 @@
 </LengthTension>
 <MaximumTension Value="3.02" Scale="None" Actual="3.02"/>
 <Kse Value="47.4517" Scale="None" Actual="47.4517"/>
-<Kpe Value="6527.052" Scale="None" Actual="6527.052"/>
-<B Value="8.1445" Scale="None" Actual="8.1445"/>
+<Kpe Value="3663.783" Scale="None" Actual="3663.783"/>
+<B Value="24.1699" Scale="None" Actual="24.1699"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -10597,9 +10597,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="10.22" Scale="None" Actual="10.22"/>
-<Kse Value="825.232" Scale="None" Actual="825.232"/>
+<Kse Value="48.1353" Scale="None" Actual="48.1353"/>
 <Kpe Value="9685.3055" Scale="None" Actual="9685.3055"/>
-<B Value="3.5011" Scale="None" Actual="3.5011"/>
+<B Value="46.859" Scale="None" Actual="46.859"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -10733,9 +10733,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="12.21" Scale="None" Actual="12.21"/>
-<Kse Value="806.2856" Scale="None" Actual="806.2856"/>
+<Kse Value="1190.2856" Scale="None" Actual="1190.2856"/>
 <Kpe Value="379.3879" Scale="None" Actual="379.3879"/>
-<B Value="98.2983" Scale="None" Actual="98.2983"/>
+<B Value="54.9942" Scale="None" Actual="54.9942"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -11148,8 +11148,8 @@
 </LengthTension>
 <MaximumTension Value="10" Scale="None" Actual="10"/>
 <Kse Value="47.4517" Scale="None" Actual="47.4517"/>
-<Kpe Value="373.9553" Scale="None" Actual="373.9553"/>
-<B Value="99.4517" Scale="None" Actual="99.4517"/>
+<Kpe Value="1081.5219" Scale="None" Actual="1081.5219"/>
+<B Value="0.61286" Scale="None" Actual="0.61286"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -11214,9 +11214,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="2.85" Scale="None" Actual="2.85"/>
-<Kse Value="1.1774" Scale="None" Actual="1.1774"/>
-<Kpe Value="8262.8038" Scale="None" Actual="8262.8038"/>
-<B Value="60.293" Scale="None" Actual="60.293"/>
+<Kse Value="6249.8277" Scale="None" Actual="6249.8277"/>
+<Kpe Value="288.4536" Scale="None" Actual="288.4536"/>
+<B Value="95.392" Scale="None" Actual="95.392"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -11420,8 +11420,8 @@
 </LengthTension>
 <MaximumTension Value="2.35" Scale="None" Actual="2.35"/>
 <Kse Value="47.4517" Scale="None" Actual="47.4517"/>
-<Kpe Value="3199.052" Scale="None" Actual="3199.052"/>
-<B Value="6.0734" Scale="None" Actual="6.0734"/>
+<Kpe Value="3327.052" Scale="None" Actual="3327.052"/>
+<B Value="6.3576" Scale="None" Actual="6.3576"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -11556,8 +11556,8 @@
 </LengthTension>
 <MaximumTension Value="3.01" Scale="None" Actual="3.01"/>
 <Kse Value="1.1774" Scale="None" Actual="1.1774"/>
-<Kpe Value="609.3352" Scale="None" Actual="609.3352"/>
-<B Value="68.9542" Scale="None" Actual="68.9542"/>
+<Kpe Value="9980.6253" Scale="None" Actual="9980.6253"/>
+<B Value="80.5755" Scale="None" Actual="80.5755"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -11622,9 +11622,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="18.74" Scale="None" Actual="18.74"/>
-<Kse Value="197.2375" Scale="None" Actual="197.2375"/>
-<Kpe Value="8150.3547" Scale="None" Actual="8150.3547"/>
-<B Value="6.551" Scale="None" Actual="6.551"/>
+<Kse Value="7044.1669" Scale="None" Actual="7044.1669"/>
+<Kpe Value="1081.2791" Scale="None" Actual="1081.2791"/>
+<B Value="50.6144" Scale="None" Actual="50.6144"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -11689,9 +11689,9 @@
 <MinPeLength Value="5" Scale="None" Actual="5"/>
 </LengthTension>
 <MaximumTension Value="3" Scale="None" Actual="3"/>
-<Kse Value="611.4249" Scale="None" Actual="611.4249"/>
-<Kpe Value="5937.968" Scale="None" Actual="5937.968"/>
-<B Value="8.5075" Scale="None" Actual="8.5075"/>
+<Kse Value="8232.1349" Scale="None" Actual="8232.1349"/>
+<Kpe Value="726.3547" Scale="None" Actual="726.3547"/>
+<B Value="83.182" Scale="None" Actual="83.182"/>
 <IbDischarge Value="100" Scale="None" Actual="100"/>
 </RigidBody>
 <RigidBody>
@@ -25672,6 +25672,13 @@
 </Environment>
 <ToolViewers>
 <ToolHolder>
+<ID>dt-KeyMuscleLen-ID</ID>
+<Name>KeyMuscleLen</Name>
+<BaseAssemblyFile>LicensedAnimatGUI.dll</BaseAssemblyFile>
+<BaseClassName>LicensedAnimatGUI.Forms.Charts.LineChart</BaseClassName>
+<ToolFormID>dt-KeyMuscleLen-tfID</ToolFormID>
+</ToolHolder>
+<ToolHolder>
 <ID>dt-KeyMuscAct-ID</ID>
 <Name>KeyMuscAct</Name>
 <BaseAssemblyFile>LicensedAnimatGUI.dll</BaseAssemblyFile>
@@ -25691,13 +25698,6 @@
 <BaseAssemblyFile>LicensedAnimatGUI.dll</BaseAssemblyFile>
 <BaseClassName>LicensedAnimatGUI.Forms.Charts.LineChart</BaseClassName>
 <ToolFormID>dt-KeyMuscAl-tfID</ToolFormID>
-</ToolHolder>
-<ToolHolder>
-<ID>05cf2c0d-3c28-44b1-ae86-c58f4e717d5c</ID>
-<Name>JointMotion_injected</Name>
-<BaseAssemblyFile>LicensedAnimatGUI.dll</BaseAssemblyFile>
-<BaseClassName>LicensedAnimatGUI.Forms.Charts.LineChart</BaseClassName>
-<ToolFormID>1b1bb75a-f9ae-4839-8124-5172f1dbddcf</ToolFormID>
 </ToolHolder>
 <ToolHolder>
 <ID>dt-KeyMuscTen-ID</ID>
@@ -25721,11 +25721,11 @@
 <ToolFormID>dt-PassiveTension-tfID</ToolFormID>
 </ToolHolder>
 <ToolHolder>
-<ID>dt-KeyMuscleLen-ID</ID>
-<Name>KeyMuscleLen</Name>
+<ID>05cf2c0d-3c28-44b1-ae86-c58f4e717d5c</ID>
+<Name>JointMotion_injected</Name>
 <BaseAssemblyFile>LicensedAnimatGUI.dll</BaseAssemblyFile>
 <BaseClassName>LicensedAnimatGUI.Forms.Charts.LineChart</BaseClassName>
-<ToolFormID>dt-KeyMuscleLen-tfID</ToolFormID>
+<ToolFormID>1b1bb75a-f9ae-4839-8124-5172f1dbddcf</ToolFormID>
 </ToolHolder>
 </ToolViewers>
 <Stimuli>
@@ -26318,6 +26318,28 @@
 <Stimulus>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.ExternalStimuli.TonicCurrent</ClassName>
+<Name>stTC1-neur37</Name>
+<ID>stTC1-neur37-ID</ID>
+<StartTime Value="0" Scale="None" Actual="0"/>
+<EndTime Value="10" Scale="None" Actual="10"/>
+<StepInterval Value="0" Scale="milli" Actual="0"/>
+<AlwaysActive>False</AlwaysActive>
+<Enabled>False</Enabled>
+<ValueType>Constant</ValueType>
+<Equation>8.9437*sin(0*t+1.5708)</Equation>
+<OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
+<NodeID>neur37-ID</NodeID>
+<CurrentOn Value="0" Scale="nano" Actual="0"/>
+<CurrentOff Value="0" Scale="nano" Actual="0"/>
+<CurrentBurstOff Value="0" Scale="nano" Actual="0"/>
+<CycleOnDuration Value="10" Scale="None" Actual="10"/>
+<CycleOffDuration Value="0" Scale="None" Actual="0"/>
+<BurstOnDuration Value="10" Scale="None" Actual="10"/>
+<BurstOffDuration Value="0" Scale="None" Actual="0"/>
+</Stimulus>
+<Stimulus>
+<AssemblyFile>AnimatGUI.dll</AssemblyFile>
+<ClassName>AnimatGUI.DataObjects.ExternalStimuli.TonicCurrent</ClassName>
 <Name>stTC1-neur10</Name>
 <ID>stTC1-neur10-ID</ID>
 <StartTime Value="0" Scale="None" Actual="0"/>
@@ -26375,28 +26397,6 @@
 <PartID>b2919ff8-3efa-4549-97b4-a4bc77ad6e0a</PartID>
 <Velocity Value="0" Scale="None" Actual="0"/>
 <DisableMotorWhenDone>False</DisableMotorWhenDone>
-</Stimulus>
-<Stimulus>
-<AssemblyFile>AnimatGUI.dll</AssemblyFile>
-<ClassName>AnimatGUI.DataObjects.ExternalStimuli.TonicCurrent</ClassName>
-<Name>stTC1-neur2</Name>
-<ID>stTC1-neur2-ID</ID>
-<StartTime Value="3.21" Scale="None" Actual="3.21"/>
-<EndTime Value="3.71" Scale="None" Actual="3.71"/>
-<StepInterval Value="0" Scale="milli" Actual="0"/>
-<AlwaysActive>False</AlwaysActive>
-<Enabled>False</Enabled>
-<ValueType>Constant</ValueType>
-<Equation>0.81608*sin(0*t+1.5708)</Equation>
-<OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
-<NodeID>neur2-ID</NodeID>
-<CurrentOn Value="20" Scale="nano" Actual="2e-008"/>
-<CurrentOff Value="0" Scale="nano" Actual="0"/>
-<CurrentBurstOff Value="0" Scale="nano" Actual="0"/>
-<CycleOnDuration Value="50" Scale="centi" Actual="0.5"/>
-<CycleOffDuration Value="0" Scale="None" Actual="0"/>
-<BurstOnDuration Value="50" Scale="centi" Actual="0.5"/>
-<BurstOffDuration Value="0" Scale="None" Actual="0"/>
 </Stimulus>
 <Stimulus>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
@@ -26545,23 +26545,23 @@
 <Stimulus>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.ExternalStimuli.TonicCurrent</ClassName>
-<Name>stTC1-neur37</Name>
-<ID>stTC1-neur37-ID</ID>
-<StartTime Value="0" Scale="None" Actual="0"/>
-<EndTime Value="10" Scale="None" Actual="10"/>
+<Name>stTC1-neur2</Name>
+<ID>stTC1-neur2-ID</ID>
+<StartTime Value="3.21" Scale="None" Actual="3.21"/>
+<EndTime Value="3.71" Scale="None" Actual="3.71"/>
 <StepInterval Value="0" Scale="milli" Actual="0"/>
 <AlwaysActive>False</AlwaysActive>
 <Enabled>False</Enabled>
 <ValueType>Constant</ValueType>
-<Equation>8.9437*sin(0*t+1.5708)</Equation>
+<Equation>0.81608*sin(0*t+1.5708)</Equation>
 <OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
-<NodeID>neur37-ID</NodeID>
-<CurrentOn Value="0" Scale="nano" Actual="0"/>
+<NodeID>neur2-ID</NodeID>
+<CurrentOn Value="20" Scale="nano" Actual="2e-008"/>
 <CurrentOff Value="0" Scale="nano" Actual="0"/>
 <CurrentBurstOff Value="0" Scale="nano" Actual="0"/>
-<CycleOnDuration Value="10" Scale="None" Actual="10"/>
+<CycleOnDuration Value="50" Scale="centi" Actual="0.5"/>
 <CycleOffDuration Value="0" Scale="None" Actual="0"/>
-<BurstOnDuration Value="10" Scale="None" Actual="10"/>
+<BurstOnDuration Value="50" Scale="centi" Actual="0.5"/>
 <BurstOffDuration Value="0" Scale="None" Actual="0"/>
 </Stimulus>
 <Stimulus>
@@ -26721,8 +26721,8 @@
 </Stimuli>
 <HudItems>
 <HudItem>
-<Name>f88f266d-028f-4045-9629-5f779006c91c</Name>
-<ID>f88f266d-028f-4045-9629-5f779006c91c</ID>
+<Name>10835b79-5273-4f40-a181-ef9fefb41a3e</Name>
+<ID>10835b79-5273-4f40-a181-ef9fefb41a3e</ID>
 <Type>HudText</Type>
 <CharSize>30</CharSize>
 <Text>Time: %3.3f</Text>
@@ -26835,7 +26835,7 @@
 <DockingConfig>&lt;?xml version="1.0" encoding="us-ascii"?&gt;
 &lt;!-- DotNetMagic, The User Interface library for .NET (www.crownwood.net) --&gt;
 &lt;!-- Modifying this generated file will probably render it invalid --&gt;
-&lt;DockingConfig FormatVersion="10" InsideFill="False" InnerMinimum="20, 20" SavedAt="09/23/2020 16:38:33"&gt;
+&lt;DockingConfig FormatVersion="10" InsideFill="False" InnerMinimum="20, 20" SavedAt="10/07/2020 14:19:37"&gt;
   &lt;Content Name="Playback Control" Visible="False" Docked="True" AutoHidden="False" CaptionBar="True" CloseButton="False" DisplaySize="150, 150" DisplayLocation="150, 150" AutoHideSize="150, 150" FloatingSize="150, 150" FullTitle="Playback Control" Office2003BackColor="Base" UniqueName="" Office2007BackColor="Base" MediaPlayerBackColor="Base"&gt;
     &lt;DefaultRestore Type="Crownwood.DotNetMagic.Docking.RestoreContentState"&gt;
       &lt;Content Name="Playback Control" UniqueName="" /&gt;

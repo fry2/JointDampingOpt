@@ -2094,7 +2094,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>529da50a-3fca-44d2-bd1a-d9a66a39491a</ID>
+<ID>4b228cb9-e6f8-4c3a-b342-e190e85df405</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -2104,7 +2104,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>4f7c6b8c-637c-4df6-bab6-414f68e743c6</ID>
+<ID>0f165df2-d9d6-416e-b697-a7ced539e1ac</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -2447,8 +2447,8 @@
 <Attachments>
 <AttachID>c9945070-32b4-4104-8347-2a701bc74c70</AttachID>
 <AttachID>da98174c-94e9-4353-a4bf-a1550d37db65</AttachID>
-<AttachID>e26d6ff7-cec5-48ca-91f3-471273d3359f</AttachID>
-<AttachID>6cdb89b0-e2df-4f8b-8b5e-184529c90b7f</AttachID>
+<AttachID>afb88b6f-5ef0-4808-87db-cd475f805f46</AttachID>
+<AttachID>1f477509-9025-405e-847b-7d048271333c</AttachID>
 </Attachments>
 <StimulusTension>
 <ID>de8c441a-08e5-4daf-b1a7-ee3c44375a52</ID>
@@ -3051,7 +3051,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>f63a1201-dd5f-455d-913e-e7ddf4ca9ac6</ID>
+<ID>a36b3801-5a51-462b-a66b-89f2c8d3343d</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -3061,7 +3061,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>5315aeb6-aa61-4ba0-b4ec-0e28b2634a9a</ID>
+<ID>eed5e45f-d227-4f46-9ebd-e2da970af303</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -3242,7 +3242,7 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
-<Name>PeroneiVia Tibia LH_AnkleZ Ext</Name>
+<Name>PeroneiViaOne Tibia LH_AnkleZ Ext</Name>
 <ID>340833f5-4e2a-483f-954c-835680ad54ac</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
@@ -3351,8 +3351,8 @@
 <Attachments>
 <AttachID>6894dc8d-f315-4a99-9d4c-3299694a122a</AttachID>
 <AttachID>48c91d7c-5fc8-4b97-a7e0-048c8ba879db</AttachID>
-<AttachID>f2a82a96-15d0-4b05-9792-c8f2ead5d63c</AttachID>
-<AttachID>266d96f2-624e-4e9a-adbd-c496236b2cb7</AttachID>
+<AttachID>133e1a3f-cef5-4d76-b844-02e5856589d1</AttachID>
+<AttachID>89b0223f-ffcf-4883-aea1-eb8755e79b9b</AttachID>
 <AttachID>1746fbf9-71a0-48f5-811c-ab7e44335eb6</AttachID>
 </Attachments>
 <StimulusTension>
@@ -3572,7 +3572,7 @@
 <Scale x="1" y="1" z="1"/>
 </RigidBody>
 <RigidBody>
-<Name>FlexorHallucisLongusVia Tibia LH_AnkleZ Ext</Name>
+<Name>FlexorHallucisLongusViaOne Tibia LH_AnkleZ Ext</Name>
 <ID>48c91d7c-5fc8-4b97-a7e0-048c8ba879db</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
@@ -4248,7 +4248,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>c7f10ac7-6b50-4cbd-a636-c96ab863b059</ID>
+<ID>357c70b0-4334-41cc-93c6-3576d90d7c7c</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -4258,7 +4258,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>d1a96d27-6559-4973-adc7-4984c76738e0</ID>
+<ID>58301990-9051-4c52-aaf2-177500b84d06</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -4439,6 +4439,52 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
+<Name>FlexorHallucisLongusViaTwo Foot LH_AnkleZ Ext</Name>
+<ID>133e1a3f-cef5-4d76-b844-02e5856589d1</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.001441" y="-0.002915" z="-0.000775"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
 <Name>FlexorHallucisLongusIns Foot LH_AnkleZ Ext</Name>
 <ID>1746fbf9-71a0-48f5-811c-ab7e44335eb6</ID>
 <Description/>
@@ -4531,8 +4577,8 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
-<Name>FlexorViaTwo Foot LH_AnkleZ Ext</Name>
-<ID>266d96f2-624e-4e9a-adbd-c496236b2cb7</ID>
+<Name>MedialGastrocnemiusIns Foot LH_AnkleZ Ext</Name>
+<ID>1f477509-9025-405e-847b-7d048271333c</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
 <CollisionsAlpha>0.5</CollisionsAlpha>
@@ -4541,11 +4587,11 @@
 <SimulationAlpha>1</SimulationAlpha>
 <IsVisible>True</IsVisible>
 <Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
-<Diffuse Red="0.752941" Green="0" Blue="0" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="0.00298" y="-0.004406" z="-0.000154"/>
+<Position x="-0.003158" y="-0.002639" z="0.000201"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -4572,7 +4618,53 @@
 <MaxFoodQuantity>10000</MaxFoodQuantity>
 <FoodReplenishRate>1</FoodReplenishRate>
 <FoodEnergyContent>1000</FoodEnergyContent>
-<Radius>0.0005</Radius>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>PeroneiViaTwo Foot LH_AnkleZ Ext</Name>
+<ID>266d96f2-624e-4e9a-adbd-c496236b2cb7</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="0.752941" Green="0" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="0.00298" y="-0.004406" z="1.15e-005"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
 <LatitudeSegments>20</LatitudeSegments>
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
@@ -4669,7 +4761,53 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
-<Name>HeelIns Foot LH_AnkleZ Ext</Name>
+<Name>FlexorDigitorumLongusViaThree Foot LH_AnkleZ Ext</Name>
+<ID>51c3934b-6b47-459a-b85c-fa918e66f03e</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="0.002079" y="-0.004229" z="-0.000263"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>LateralGastrocnemiusIns Foot LH_AnkleZ Ext</Name>
 <ID>6cdb89b0-e2df-4f8b-8b5e-184529c90b7f</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
@@ -4683,7 +4821,53 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.00309" y="-0.002356" z="0.0013255"/>
+<Position x="-0.00309" y="-0.002356" z="0.001708"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>PeroneusLongusIns Foot LH_AnkleZ Ext</Name>
+<ID>8832da50-2f06-4b55-93f0-59245990024a</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="0.752941" Green="0" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="0.006718" y="-0.005445" z="-5.1369e-005"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -4715,8 +4899,8 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
-<Name>PeroneusLongusIns Foot LH_AnkleZ Ext</Name>
-<ID>8832da50-2f06-4b55-93f0-59245990024a</ID>
+<Name>FlexorHallucisLongusViaThree Foot LH_AnkleZ Ext</Name>
+<ID>89b0223f-ffcf-4883-aea1-eb8755e79b9b</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
 <CollisionsAlpha>0.5</CollisionsAlpha>
@@ -4725,11 +4909,11 @@
 <SimulationAlpha>1</SimulationAlpha>
 <IsVisible>True</IsVisible>
 <Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
-<Diffuse Red="0.752941" Green="0" Blue="0" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="0.006718" y="-0.005552" z="-0.001458"/>
+<Position x="0.002963" y="-0.00429" z="-0.000567"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -4756,7 +4940,53 @@
 <MaxFoodQuantity>10000</MaxFoodQuantity>
 <FoodReplenishRate>1</FoodReplenishRate>
 <FoodEnergyContent>1000</FoodEnergyContent>
-<Radius>0.0005</Radius>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>PlantarisViaTwo Foot LH_AnkleZ Ext</Name>
+<ID>a066a7b7-1482-4e86-950c-e6481511357c</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="0.752941" Green="0" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.004582" y="0.000581" z="0.000505"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
 <LatitudeSegments>20</LatitudeSegments>
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
@@ -4807,6 +5037,144 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
+<Name>FlexorDigitorumLongusViaTwo Foot LH_AnkleZ Ext</Name>
+<ID>abe8a305-3f67-4396-a90d-7013b39035bc</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.001328" y="-0.003328" z="-0.000359"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>SoleusIns Foot LH_AnkleZ Ext</Name>
+<ID>ad504c42-3448-4011-a6b3-46f09ba4df7f</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.003561" y="-0.002754" z="0.0004"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>MedialGastrocnemiusViaTwo Foot LH_AnkleZ Ext</Name>
+<ID>afb88b6f-5ef0-4808-87db-cd475f805f46</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.004572" y="0.000105" z="-0.000263"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
 <Name>Toe_Pos</Name>
 <ID>d1a3e812-439b-47fa-8e9b-5de8175e508d</ID>
 <Description/>
@@ -4853,8 +5221,8 @@
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
 <RigidBody>
-<Name>AchillesVia Foot LH_AnkleZ Ext</Name>
-<ID>e26d6ff7-cec5-48ca-91f3-471273d3359f</ID>
+<Name>SoleusViaTwo Foot LH_AnkleZ Ext</Name>
+<ID>d4991346-7cd6-4ea5-abfe-d560205e123d</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
 <CollisionsAlpha>0.5</CollisionsAlpha>
@@ -4867,7 +5235,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.004703" y="0.000568" z="0.001326"/>
+<Position x="-0.004582" y="0.000581" z="0.000165"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -4894,7 +5262,99 @@
 <MaxFoodQuantity>10000</MaxFoodQuantity>
 <FoodReplenishRate>1</FoodReplenishRate>
 <FoodEnergyContent>1000</FoodEnergyContent>
-<Radius>0.0005</Radius>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>PlantarisIns Foot LH_AnkleZ Ext</Name>
+<ID>d680b12f-b8d0-4a04-b486-a79771fc0b7f</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="1" Green="0.647059" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.003561" y="-0.002715" z="0.000819"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>LateralGastrocnemiusVia Foot LH_AnkleZ Ext</Name>
+<ID>e26d6ff7-cec5-48ca-91f3-471273d3359f</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="0.752941" Green="0" Blue="0" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.004703" y="0.000568" z="0.001213"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.00025</Radius>
 <LatitudeSegments>20</LatitudeSegments>
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
@@ -4945,7 +5405,7 @@
 <Scale x="1" y="1" z="1"/>
 </RigidBody>
 <RigidBody>
-<Name>FlexorViaOne Foot LH_AnkleZ Ext</Name>
+<Name>PeroneiViaTwo Foot LH_AnkleZ Ext</Name>
 <ID>f2a82a96-15d0-4b05-9792-c8f2ead5d63c</ID>
 <Description/>
 <GraphicsAlpha>1</GraphicsAlpha>
@@ -4959,7 +5419,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.001821" y="-0.002527" z="-0.000154"/>
+<Position x="-0.001821" y="-0.002527" z="0.000257"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -4986,7 +5446,7 @@
 <MaxFoodQuantity>10000</MaxFoodQuantity>
 <FoodReplenishRate>1</FoodReplenishRate>
 <FoodEnergyContent>1000</FoodEnergyContent>
-<Radius>0.0005</Radius>
+<Radius>0.00025</Radius>
 <LatitudeSegments>20</LatitudeSegments>
 <LongtitudeSegments>20</LongtitudeSegments>
 </RigidBody>
@@ -5340,8 +5800,8 @@
 <Diffuse Red="1" Green="0" Blue="1" Alpha="1"/>
 <Attachments>
 <AttachID>f66dd162-4b03-4ccd-ab7d-dcdf6454ef46</AttachID>
-<AttachID>e26d6ff7-cec5-48ca-91f3-471273d3359f</AttachID>
-<AttachID>6cdb89b0-e2df-4f8b-8b5e-184529c90b7f</AttachID>
+<AttachID>d4991346-7cd6-4ea5-abfe-d560205e123d</AttachID>
+<AttachID>ad504c42-3448-4011-a6b3-46f09ba4df7f</AttachID>
 </Attachments>
 <StimulusTension>
 <ID>b75a01af-1ced-4f38-8be7-58cefef35be9</ID>
@@ -5439,8 +5899,8 @@
 <Attachments>
 <AttachID>43baaf7c-7001-4774-b995-5d03c8f96a3e</AttachID>
 <AttachID>c202baf0-f1f3-49bb-8d29-8857ce66a887</AttachID>
-<AttachID>f2a82a96-15d0-4b05-9792-c8f2ead5d63c</AttachID>
-<AttachID>266d96f2-624e-4e9a-adbd-c496236b2cb7</AttachID>
+<AttachID>abe8a305-3f67-4396-a90d-7013b39035bc</AttachID>
+<AttachID>51c3934b-6b47-459a-b85c-fa918e66f03e</AttachID>
 <AttachID>00e6153c-bdde-4b67-9688-f6f06d59d04c</AttachID>
 </Attachments>
 <StimulusTension>
@@ -6071,8 +6531,8 @@
 <AttachID>b4504fa6-46bf-4954-b787-2384658e634c</AttachID>
 <AttachID>cd1ca1c0-a17a-4db8-9185-2a17573ee348</AttachID>
 <AttachID>47455171-acf1-4f7c-b55c-db9e35135a42</AttachID>
-<AttachID>e26d6ff7-cec5-48ca-91f3-471273d3359f</AttachID>
-<AttachID>6cdb89b0-e2df-4f8b-8b5e-184529c90b7f</AttachID>
+<AttachID>a066a7b7-1482-4e86-950c-e6481511357c</AttachID>
+<AttachID>d680b12f-b8d0-4a04-b486-a79771fc0b7f</AttachID>
 </Attachments>
 <StimulusTension>
 <ID>ff992fd6-dee6-4262-8b17-07cfc7eb8b53</ID>
@@ -10741,13 +11201,13 @@
 <CurrentType>Tonic</CurrentType>
 <OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
 <TargetNodeID>neur17-ID</TargetNodeID>
-<StartTime>0</StartTime>
-<EndTime>10</EndTime>
-<CycleOnDuration>10</CycleOnDuration>
+<StartTime>2</StartTime>
+<EndTime>4</EndTime>
+<CycleOnDuration>2</CycleOnDuration>
 <CycleOffDuration>0</CycleOffDuration>
-<BurstOnDuration>10</BurstOnDuration>
+<BurstOnDuration>2</BurstOnDuration>
 <BurstOffDuration>0</BurstOffDuration>
-<CurrentOn>0</CurrentOn>
+<CurrentOn>2e-008</CurrentOn>
 <CurrentOff>0</CurrentOff>
 <CurrentBurstOff>0</CurrentBurstOff>
 </Stimulus>
@@ -10760,13 +11220,13 @@
 <CurrentType>Tonic</CurrentType>
 <OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
 <TargetNodeID>neur22-ID</TargetNodeID>
-<StartTime>0</StartTime>
-<EndTime>10</EndTime>
-<CycleOnDuration>10</CycleOnDuration>
+<StartTime>2</StartTime>
+<EndTime>4</EndTime>
+<CycleOnDuration>2</CycleOnDuration>
 <CycleOffDuration>0</CycleOffDuration>
-<BurstOnDuration>10</BurstOnDuration>
+<BurstOnDuration>2</BurstOnDuration>
 <BurstOffDuration>0</BurstOffDuration>
-<CurrentOn>0</CurrentOn>
+<CurrentOn>2e-008</CurrentOn>
 <CurrentOff>0</CurrentOff>
 <CurrentBurstOff>0</CurrentBurstOff>
 </Stimulus>
@@ -11165,25 +11625,6 @@
 <CurrentBurstOff>0</CurrentBurstOff>
 </Stimulus>
 <Stimulus>
-<ID>stTC1-neur37-ID</ID>
-<Name>stTC1-neur37</Name>
-<AlwaysActive>False</AlwaysActive>
-<Enabled>False</Enabled>
-<Type>Current</Type>
-<CurrentType>Tonic</CurrentType>
-<OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
-<TargetNodeID>neur37-ID</TargetNodeID>
-<StartTime>0</StartTime>
-<EndTime>10</EndTime>
-<CycleOnDuration>10</CycleOnDuration>
-<CycleOffDuration>0</CycleOffDuration>
-<BurstOnDuration>10</BurstOnDuration>
-<BurstOffDuration>0</BurstOffDuration>
-<CurrentOn>0</CurrentOn>
-<CurrentOff>0</CurrentOff>
-<CurrentBurstOff>0</CurrentBurstOff>
-</Stimulus>
-<Stimulus>
 <ID>stTC1-neur10-ID</ID>
 <Name>stTC1-neur10</Name>
 <AlwaysActive>False</AlwaysActive>
@@ -11235,6 +11676,25 @@
 <TargetID>Position</TargetID>
 <Equation>0.2466,0.5468,t,*,1.124,-,sin,*,0.046,1.003,t,*,0.2206,-,sin,*,0.07998,3.77,t,*,2.07,+,sin,*,0.5721,1.879,t,*,1.298,-,sin,*,0.6951,0.2447,t,*,3.506,+,sin,*,+,+,+,+</Equation>
 <DisableMotorWhenDone>False</DisableMotorWhenDone>
+</Stimulus>
+<Stimulus>
+<ID>stTC1-neur2-ID</ID>
+<Name>stTC1-neur2</Name>
+<AlwaysActive>False</AlwaysActive>
+<Enabled>False</Enabled>
+<Type>Current</Type>
+<CurrentType>Tonic</CurrentType>
+<OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
+<TargetNodeID>neur2-ID</TargetNodeID>
+<StartTime>3.21</StartTime>
+<EndTime>3.71</EndTime>
+<CycleOnDuration>0.5</CycleOnDuration>
+<CycleOffDuration>0</CycleOffDuration>
+<BurstOnDuration>0.5</BurstOnDuration>
+<BurstOffDuration>0</BurstOffDuration>
+<CurrentOn>2e-008</CurrentOn>
+<CurrentOff>0</CurrentOff>
+<CurrentBurstOff>0</CurrentBurstOff>
 </Stimulus>
 <Stimulus>
 <ID>stTC1-neur23-ID</ID>
@@ -11362,21 +11822,21 @@
 <CurrentBurstOff>0</CurrentBurstOff>
 </Stimulus>
 <Stimulus>
-<ID>stTC1-neur2-ID</ID>
-<Name>stTC1-neur2</Name>
+<ID>stTC1-neur37-ID</ID>
+<Name>stTC1-neur37</Name>
 <AlwaysActive>False</AlwaysActive>
 <Enabled>False</Enabled>
 <Type>Current</Type>
 <CurrentType>Tonic</CurrentType>
 <OrganismID>e40d2c4f-9c31-49f8-8a5c-5688fb768225</OrganismID>
-<TargetNodeID>neur2-ID</TargetNodeID>
-<StartTime>3.21</StartTime>
-<EndTime>3.71</EndTime>
-<CycleOnDuration>0.5</CycleOnDuration>
+<TargetNodeID>neur37-ID</TargetNodeID>
+<StartTime>0</StartTime>
+<EndTime>10</EndTime>
+<CycleOnDuration>10</CycleOnDuration>
 <CycleOffDuration>0</CycleOffDuration>
-<BurstOnDuration>0.5</BurstOnDuration>
+<BurstOnDuration>10</BurstOnDuration>
 <BurstOffDuration>0</BurstOffDuration>
-<CurrentOn>2e-008</CurrentOn>
+<CurrentOn>0</CurrentOn>
 <CurrentOff>0</CurrentOff>
 <CurrentBurstOff>0</CurrentBurstOff>
 </Stimulus>
@@ -12211,8 +12671,8 @@
 <HudItem>
 <ModuleName/>
 <Type>HudText</Type>
-<Name>10835b79-5273-4f40-a181-ef9fefb41a3e</Name>
-<ID>10835b79-5273-4f40-a181-ef9fefb41a3e</ID>
+<Name>88642481-9bf8-4969-b556-1baaff856206</Name>
+<ID>88642481-9bf8-4969-b556-1baaff856206</ID>
 <Type>HudText</Type>
 <CharSize>30</CharSize>
 <Text>Time: %3.3f</Text>
