@@ -35,18 +35,20 @@ function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NW
     physTS = double(extractBetween(string(simText{contains(simText,'<PhysicsTimeStep>')}),'>','<'));
     passive_nonlcon_wrap = @(x) passive_nonlcon(x,physTS);
     
-    aplacer = 1:3:38*3;
-    for ii = 1:38
+    aplacer = 1:3:numZones*3;
+    for ii = 1:numZones
         A(ii,aplacer(ii):aplacer(ii)+2) = [-2, physTS, physTS];
     end
-    b = zeros(38,1);
+    b = zeros(numZones,1);
     
     ub = repmat([1e2 1e4 1e4],1,numZones);
     lb = repmat([1e-3 1 1],1,numZones);
 
     fun_pass = @(inVec) objFun_whole_leg_passive(inVec,NWmotion,mInfo,stimLevel,ts);
-    pattOpts = optimoptions('patternsearch','UseParallel',true,'InitialMeshSize',37.5,'MaxTime',maxTime*60,...  
+    pattOpts = optimoptions('patternsearch','UseParallel',true,'InitialMeshSize',1.5,'MaxTime',maxTime*60,...  
         'Display','iter','SearchFcn','MADSPositiveBasis2N','UseCompleteSearch',true,'OutputFcn',@outfun);%'MaxTime',maxTime*60;,'MaxFunctionEvaluations',100;
+   % pattOpts = optimoptions('patternsearch','UseParallel',true,'InitialMeshSize',5000,'MaxTime',maxTime*60,...  
+    %    'Display','iter','OutputFcn',@outfun);
     [passVals,fVal,~,output] = patternsearch(fun_pass,initialPoint,A,b,[],[],lb,ub,[],pattOpts);%passive_nonlcon_wrap
 
     delete([pwd,'\tp*'],...

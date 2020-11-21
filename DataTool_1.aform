@@ -68,7 +68,7 @@
 </AxisList>
 <SaveDataWhenClosed>False</SaveDataWhenClosed>
 <UpdateChartAtEnd>True</UpdateChartAtEnd>
-<PointsToKeep>484000</PointsToKeep>
+<PointsToKeep>484001</PointsToKeep>
 <YAxisOffset>0</YAxisOffset>
 <GraphConfig ByteCount="8971"/>
 </Form>

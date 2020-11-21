@@ -1,6 +1,6 @@
 <Project>
-<ProjectName>JointDampingOpt_compAnkle</ProjectName>
-<SimulationFile>JointDampingOpt_compAnkle.asim</SimulationFile>
+<ProjectName>JointDampingOpt_heavyBones</ProjectName>
+<SimulationFile>JointDampingOpt_heavyBones.asim</SimulationFile>
 <LogLevel>ErrorType</LogLevel>
 <Version>3</Version>
 <Physics>Vortex</Physics>
@@ -2442,16 +2442,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="10.522" Scale="milli" Actual="0.010522"/>
-<Y Value="-5.42" Scale="milli" Actual="-0.00542"/>
-<Z Value="8.854" Scale="milli" Actual="0.008854"/>
+<X Value="6.778" Scale="milli" Actual="0.006778"/>
+<Y Value="-7.486" Scale="milli" Actual="-0.007486"/>
+<Z Value="6.731" Scale="milli" Actual="0.006731"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,0.10522,-0.0542,0.08854,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,0.06778,-0.07486,0.06731,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -2893,8 +2893,8 @@
 <MaxHydroTorque Value="20" Scale="None" Actual="20"/>
 <Magnus>0</Magnus>
 <EnableFluids>False</EnableFluids>
-<Density Value="8.26" Scale="None" Actual="8.26"/>
-<Mass Value="14.141" Scale="None" Actual="14.141"/>
+<Density Value="8.178" Scale="None" Actual="8.178"/>
+<Mass Value="14.001" Scale="None" Actual="14.001"/>
 <COM>
 <X Value="-8.315" Scale="milli" Actual="-0.008315"/>
 <Y Value="-1.975" Scale="milli" Actual="-0.001975"/>
@@ -2976,7 +2976,7 @@
 <Relaxation5>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>8c98b23b-b4ff-417a-bcd8-0aa4d44eb2b1</ID>
+<ID>764059f7-eac4-4994-8cdf-d07090df022a</ID>
 <Enabled>False</Enabled>
 <CoordinateID>4</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -2985,7 +2985,7 @@
 <Relaxation6>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>96459bb7-cc92-4e62-9cc9-f38730c8dcdb</ID>
+<ID>1264bb09-bbc1-4857-bed6-3110af3b380e</ID>
 <Enabled>False</Enabled>
 <CoordinateID>5</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -3129,16 +3129,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-6.201" Scale="milli" Actual="-0.006201"/>
-<Y Value="-3.976" Scale="milli" Actual="-0.003976"/>
-<Z Value="-0.436" Scale="milli" Actual="-0.000436"/>
+<X Value="-5.295" Scale="milli" Actual="-0.005295"/>
+<Y Value="-6.303" Scale="milli" Actual="-0.006303"/>
+<Z Value="2.311" Scale="milli" Actual="0.002311"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.06201,-0.03976,-0.00436,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.05295,-0.06303,0.02311,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -3405,16 +3405,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-10.558" Scale="milli" Actual="-0.010558"/>
-<Y Value="0.266" Scale="milli" Actual="0.000266"/>
-<Z Value="33.229" Scale="milli" Actual="0.033229"/>
+<X Value="-9.382" Scale="milli" Actual="-0.009382"/>
+<Y Value="0.822" Scale="milli" Actual="0.000822"/>
+<Z Value="33.491" Scale="milli" Actual="0.033491"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.10558,0.00266,0.33229,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.09382,0.00822,0.33491,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -3475,7 +3475,7 @@
 <Diffuse Red="1" Green="0" Blue="1" Alpha="1"/>
 <Attachments>
 <AttachID>c9945070-32b4-4104-8347-2a701bc74c70</AttachID>
-<AttachID>3cb22bbd-6500-47bf-9791-b9cfe0c3462d</AttachID>
+<AttachID>da98174c-94e9-4353-a4bf-a1550d37db65</AttachID>
 <AttachID>afb88b6f-5ef0-4808-87db-cd475f805f46</AttachID>
 <AttachID>1f477509-9025-405e-847b-7d048271333c</AttachID>
 </Attachments>
@@ -3819,16 +3819,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-12.657" Scale="milli" Actual="-0.012657"/>
+<X Value="-12.946" Scale="milli" Actual="-0.012946"/>
 <Y Value="-2.802" Scale="milli" Actual="-0.002802"/>
-<Z Value="31.648" Scale="milli" Actual="0.031648"/>
+<Z Value="32.953" Scale="milli" Actual="0.032953"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.12657,-0.02802,0.31648,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.12946,-0.02802,0.32953,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -4270,8 +4270,8 @@
 <MaxHydroTorque Value="20" Scale="None" Actual="20"/>
 <Magnus>0</Magnus>
 <EnableFluids>False</EnableFluids>
-<Density Value="2.471" Scale="None" Actual="2.471"/>
-<Mass Value="3.339" Scale="None" Actual="3.339"/>
+<Density Value="2.465" Scale="None" Actual="2.465"/>
+<Mass Value="3.331" Scale="None" Actual="3.331"/>
 <COM>
 <X Value="-1.833" Scale="milli" Actual="-0.001833"/>
 <Y Value="-17.219" Scale="milli" Actual="-0.017219"/>
@@ -4353,7 +4353,7 @@
 <Relaxation5>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>56de53e9-0b95-4e9f-b002-c9cac86b519d</ID>
+<ID>9ac1c68e-cc68-4451-8a84-561b4a487fec</ID>
 <Enabled>False</Enabled>
 <CoordinateID>4</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -4362,7 +4362,7 @@
 <Relaxation6>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>8c094ed2-99da-4b34-9fc6-0fb30d754fc8</ID>
+<ID>6a09fd81-8aa1-48bc-89ef-2aa4a35e7796</ID>
 <Enabled>False</Enabled>
 <CoordinateID>5</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -4654,75 +4654,6 @@
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
 <LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,0.01375,-0.41618,-0.06197,1</LocalMatrix>
-<DraggerSize Value="-1" Scale="None" Actual="-1"/>
-<Type>Attachment</Type>
-<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
-<SynchWithRobot>False</SynchWithRobot>
-<SynchUpdateInterval Value="0" Scale="milli" Actual="0"/>
-<IsContactSensor>False</IsContactSensor>
-<IsCollisionObject>False</IsCollisionObject>
-<BuoyancyCenter>
-<X Value="0" Scale="None" Actual="0"/>
-<Y Value="0" Scale="None" Actual="0"/>
-<Z Value="0" Scale="None" Actual="0"/>
-</BuoyancyCenter>
-<BuoyancyScale>1</BuoyancyScale>
-<LinearDrag>
-<X Value="1" Scale="None" Actual="1"/>
-<Y Value="1" Scale="None" Actual="1"/>
-<Z Value="1" Scale="None" Actual="1"/>
-</LinearDrag>
-<AngularDrag>
-<X Value="50" Scale="milli" Actual="0.05"/>
-<Y Value="50" Scale="milli" Actual="0.05"/>
-<Z Value="50" Scale="milli" Actual="0.05"/>
-</AngularDrag>
-<MaxHydroForce Value="50" Scale="None" Actual="50"/>
-<MaxHydroTorque Value="20" Scale="None" Actual="20"/>
-<Magnus>0</Magnus>
-<EnableFluids>False</EnableFluids>
-<Density Value="1" Scale="None" Actual="1"/>
-<Mass Value="0" Scale="None" Actual="0"/>
-<COM>
-<X Value="0" Scale="None" Actual="0"/>
-<Y Value="0" Scale="None" Actual="0"/>
-<Z Value="0" Scale="None" Actual="0"/>
-</COM>
-<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
-<Freeze>False</Freeze>
-<FoodSource>False</FoodSource>
-<Radius Value="0.5" Scale="milli" Actual="0.0005"/>
-<LatitudeSegments>20</LatitudeSegments>
-<LongtitudeSegments>20</LongtitudeSegments>
-</RigidBody>
-<RigidBody>
-<Name>MedialGastrocnemiusIns Tibia LH_AnkleZ Ext</Name>
-<ID>3cb22bbd-6500-47bf-9791-b9cfe0c3462d</ID>
-<Description/>
-<Transparencies>
-<Graphics>0</Graphics>
-<Collisions>50</Collisions>
-<Joints>50</Joints>
-<RecFields>50</RecFields>
-<Simulation>0</Simulation>
-</Transparencies>
-<IsVisible>True</IsVisible>
-<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
-<Diffuse Red="1" Green="0" Blue="1" Alpha="1"/>
-<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
-<Shininess>64</Shininess>
-<Texture/>
-<LocalPosition>
-<X Value="-3.783" Scale="milli" Actual="-0.003783"/>
-<Y Value="-6.148" Scale="milli" Actual="-0.006148"/>
-<Z Value="2.931" Scale="milli" Actual="0.002931"/>
-</LocalPosition>
-<Rotation>
-<X Value="0" Scale="None" Actual="0"/>
-<Y Value="0" Scale="None" Actual="0"/>
-<Z Value="0" Scale="None" Actual="0"/>
-</Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.03783,-0.06148,0.02931,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -5688,14 +5619,14 @@
 <LocalPosition>
 <X Value="-2.479" Scale="milli" Actual="-0.002479"/>
 <Y Value="0.802" Scale="milli" Actual="0.000802"/>
-<Z Value="-2.726" Scale="milli" Actual="-0.002726"/>
+<Z Value="-2.979" Scale="milli" Actual="-0.002979"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.02479,0.00802,-0.02726,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.02479,0.00802,-0.02979,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -6068,8 +5999,8 @@
 <MaxHydroTorque Value="20" Scale="None" Actual="20"/>
 <Magnus>0</Magnus>
 <EnableFluids>False</EnableFluids>
-<Density Value="3" Scale="None" Actual="3"/>
-<Mass Value="1.571" Scale="None" Actual="1.571"/>
+<Density Value="5.725" Scale="None" Actual="5.725"/>
+<Mass Value="2.997" Scale="None" Actual="2.997"/>
 <COM>
 <X Value="5.833" Scale="milli" Actual="0.005833"/>
 <Y Value="-3" Scale="milli" Actual="-0.003"/>
@@ -6151,7 +6082,7 @@
 <Relaxation5>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>8eec8115-ee23-48ef-98ae-3ff20d5a296b</ID>
+<ID>82605493-48ef-4e0d-a10f-7075e3c9b9cf</ID>
 <Enabled>False</Enabled>
 <CoordinateID>4</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -6160,7 +6091,7 @@
 <Relaxation6>
 <AssemblyFile>AnimatGUI.dll</AssemblyFile>
 <ClassName>AnimatGUI.DataObjects.Physical.ConstraintRelaxationVortex</ClassName>
-<ID>d1e96b24-9720-4bdf-93a8-e5ee0fe733a5</ID>
+<ID>f86f4b55-eb47-4396-806c-876bf6025ddb</ID>
 <Enabled>False</Enabled>
 <CoordinateID>5</CoordinateID>
 <Stiffness Value="100" Scale="Kilo" Actual="100000"/>
@@ -7479,14 +7410,14 @@
 <LocalPosition>
 <X Value="-4.572" Scale="milli" Actual="-0.004572"/>
 <Y Value="0.105" Scale="milli" Actual="0.000105"/>
-<Z Value="-0.612" Scale="milli" Actual="-0.000612"/>
+<Z Value="-0.263" Scale="milli" Actual="-0.000263"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.04572,0.00105,-0.00612,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.04572,0.00105,-0.00263,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -8113,7 +8044,7 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-1.437" Scale="milli" Actual="-0.001437"/>
+<X Value="-1.692" Scale="milli" Actual="-0.001692"/>
 <Y Value="0.815" Scale="milli" Actual="0.000815"/>
 <Z Value="-2.518" Scale="milli" Actual="-0.002518"/>
 </LocalPosition>
@@ -8122,7 +8053,7 @@
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.01437,0.00815,-0.02518,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.01692,0.00815,-0.02518,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -8882,6 +8813,75 @@
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
 <LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.0065,-0.00104,-0.04042,1</LocalMatrix>
+<DraggerSize Value="-1" Scale="None" Actual="-1"/>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval Value="0" Scale="milli" Actual="0"/>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter>
+<X Value="0" Scale="None" Actual="0"/>
+<Y Value="0" Scale="None" Actual="0"/>
+<Z Value="0" Scale="None" Actual="0"/>
+</BuoyancyCenter>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag>
+<X Value="1" Scale="None" Actual="1"/>
+<Y Value="1" Scale="None" Actual="1"/>
+<Z Value="1" Scale="None" Actual="1"/>
+</LinearDrag>
+<AngularDrag>
+<X Value="50" Scale="milli" Actual="0.05"/>
+<Y Value="50" Scale="milli" Actual="0.05"/>
+<Z Value="50" Scale="milli" Actual="0.05"/>
+</AngularDrag>
+<MaxHydroForce Value="50" Scale="None" Actual="50"/>
+<MaxHydroTorque Value="20" Scale="None" Actual="20"/>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density Value="1" Scale="None" Actual="1"/>
+<Mass Value="0" Scale="None" Actual="0"/>
+<COM>
+<X Value="0" Scale="None" Actual="0"/>
+<Y Value="0" Scale="None" Actual="0"/>
+<Z Value="0" Scale="None" Actual="0"/>
+</COM>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<Freeze>False</Freeze>
+<FoodSource>False</FoodSource>
+<Radius Value="0.5" Scale="milli" Actual="0.0005"/>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>MedialGastrocnemiusVia Tibia LH_AnkleZ Ext</Name>
+<ID>da98174c-94e9-4353-a4bf-a1550d37db65</ID>
+<Description/>
+<Transparencies>
+<Graphics>0</Graphics>
+<Collisions>50</Collisions>
+<Joints>50</Joints>
+<RecFields>50</RecFields>
+<Simulation>0</Simulation>
+</Transparencies>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="0.752941" Green="0" Blue="0.752941" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<LocalPosition>
+<X Value="-0.367" Scale="milli" Actual="-0.000367"/>
+<Y Value="-37.878" Scale="milli" Actual="-0.037878"/>
+<Z Value="-5.111" Scale="milli" Actual="-0.005111"/>
+</LocalPosition>
+<Rotation>
+<X Value="0" Scale="None" Actual="0"/>
+<Y Value="0" Scale="None" Actual="0"/>
+<Z Value="0" Scale="None" Actual="0"/>
+</Rotation>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.00367,-0.37878,-0.05111,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -10130,16 +10130,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-8.886" Scale="milli" Actual="-0.008886"/>
-<Y Value="1.288" Scale="milli" Actual="0.001288"/>
-<Z Value="32.775" Scale="milli" Actual="0.032775"/>
+<X Value="-6.697" Scale="milli" Actual="-0.006697"/>
+<Y Value="-0.321" Scale="milli" Actual="-0.000321"/>
+<Z Value="34.454" Scale="milli" Actual="0.034454"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.08886,0.01288,0.32775,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.06697,-0.00321,0.34454,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -10268,16 +10268,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-11.869" Scale="milli" Actual="-0.011869"/>
-<Y Value="0.4" Scale="milli" Actual="0.0004"/>
-<Z Value="31.364" Scale="milli" Actual="0.031364"/>
+<X Value="-10.7" Scale="milli" Actual="-0.0107"/>
+<Y Value="0.806" Scale="milli" Actual="0.000806"/>
+<Z Value="33.491" Scale="milli" Actual="0.033491"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.11869,0.004,0.31364,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.107,0.00806,0.33491,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -10337,16 +10337,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-5.559" Scale="milli" Actual="-0.005559"/>
-<Y Value="-2.026" Scale="milli" Actual="-0.002026"/>
-<Z Value="32.495" Scale="milli" Actual="0.032495"/>
+<X Value="-5.428" Scale="milli" Actual="-0.005428"/>
+<Y Value="-2.734" Scale="milli" Actual="-0.002734"/>
+<Z Value="30.047" Scale="milli" Actual="0.030047"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.05559,-0.02026,0.32495,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.05428,-0.02734,0.30047,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -10544,16 +10544,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="-9.847" Scale="milli" Actual="-0.009847"/>
-<Y Value="-0.757" Scale="milli" Actual="-0.000757"/>
-<Z Value="20.484" Scale="milli" Actual="0.020484"/>
+<X Value="-9.1351" Scale="milli" Actual="-0.0091351"/>
+<Y Value="3.4644" Scale="milli" Actual="0.0034644"/>
+<Z Value="16.4319" Scale="milli" Actual="0.0164319"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.09847,-0.00757,0.20484,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,-0.091351,0.034644,0.164319,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -11107,16 +11107,16 @@
 <Shininess>64</Shininess>
 <Texture/>
 <LocalPosition>
-<X Value="20.879" Scale="milli" Actual="0.020879"/>
-<Y Value="-3.121" Scale="milli" Actual="-0.003121"/>
-<Z Value="12.704" Scale="milli" Actual="0.012704"/>
+<X Value="17.828" Scale="milli" Actual="0.017828"/>
+<Y Value="-1.5" Scale="milli" Actual="-0.0015"/>
+<Z Value="14" Scale="milli" Actual="0.014"/>
 </LocalPosition>
 <Rotation>
 <X Value="0" Scale="None" Actual="0"/>
 <Y Value="0" Scale="None" Actual="0"/>
 <Z Value="0" Scale="None" Actual="0"/>
 </Rotation>
-<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,0.20879,-0.03121,0.12704,1</LocalMatrix>
+<LocalMatrix>1,0,0,0,-0,1,0,0,0,-0,1,0,0.17828,-0.015,0.14,1</LocalMatrix>
 <DraggerSize Value="-1" Scale="None" Actual="-1"/>
 <Type>Attachment</Type>
 <PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
@@ -27411,8 +27411,8 @@
 </Stimuli>
 <HudItems>
 <HudItem>
-<Name>67402062-a76f-4832-b9ae-ac99fee1063e</Name>
-<ID>67402062-a76f-4832-b9ae-ac99fee1063e</ID>
+<Name>48c5ba30-439c-4fa4-8a8a-818137a852f5</Name>
+<ID>48c5ba30-439c-4fa4-8a8a-818137a852f5</ID>
 <Type>HudText</Type>
 <CharSize>30</CharSize>
 <Text>Time: %3.3f</Text>
@@ -27525,7 +27525,7 @@
 <DockingConfig>&lt;?xml version="1.0" encoding="us-ascii"?&gt;
 &lt;!-- DotNetMagic, The User Interface library for .NET (www.crownwood.net) --&gt;
 &lt;!-- Modifying this generated file will probably render it invalid --&gt;
-&lt;DockingConfig FormatVersion="10" InsideFill="False" InnerMinimum="20, 20" SavedAt="10/28/2020 16:58:40"&gt;
+&lt;DockingConfig FormatVersion="10" InsideFill="False" InnerMinimum="20, 20" SavedAt="10/22/2020 13:21:40"&gt;
   &lt;Content Name="Playback Control" Visible="False" Docked="True" AutoHidden="False" CaptionBar="True" CloseButton="False" DisplaySize="150, 150" DisplayLocation="150, 150" AutoHideSize="150, 150" FloatingSize="150, 150" FullTitle="Playback Control" Office2003BackColor="Base" UniqueName="" Office2007BackColor="Base" MediaPlayerBackColor="Base"&gt;
     &lt;DefaultRestore Type="Crownwood.DotNetMagic.Docking.RestoreContentState"&gt;
       &lt;Content Name="Playback Control" UniqueName="" /&gt;
@@ -28021,7 +28021,7 @@
   &lt;CustomGlobalData /&gt;
   &lt;Sequence Count="1" Unique="0" Space="100" Direction="Horizontal"&gt;
     &lt;Leaf Count="10" Unique="7" Space="100"&gt;
-      &lt;Page Title="Sim Window" ImageList="True" ImageIndex="0" Selected="True" Control="null" UniqueName=""&gt;
+      &lt;Page Title="Sim Window" ImageList="True" ImageIndex="0" Selected="False" Control="null" UniqueName=""&gt;
         &lt;CustomPageData&gt;&lt;![CDATA[&lt;TabPage&gt;
 &lt;Form&gt;
 &lt;ID&gt;b1c3eb6f-fc15-4560-8750-275c275ef964&lt;/ID&gt;
@@ -28126,7 +28126,7 @@
 &lt;/TabPage&gt;
 ]]&gt;&lt;/CustomPageData&gt;
       &lt;/Page&gt;
-      &lt;Page Title="JointMotion" ImageList="True" ImageIndex="2" Selected="False" Control="null" UniqueName=""&gt;
+      &lt;Page Title="JointMotion" ImageList="True" ImageIndex="2" Selected="True" Control="null" UniqueName=""&gt;
         &lt;CustomPageData&gt;&lt;![CDATA[&lt;TabPage&gt;
 &lt;Form&gt;
 &lt;ID&gt;1b1bb75a-f9ae-4839-8124-5172f1dbddcf&lt;/ID&gt;

@@ -1,10 +1,11 @@
 function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
-    %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_Standalone.asim';
-    simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_compAnkle_Standalone.asim';
+    %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_compAnkle_Standalone.asim';
+    simPath = 'G:\My Drive\Rat\SynergyControl\Animatlab\SynergyWalking\SynergyControl_Standalone.asim';
+    %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_heavyBones_Standalone.asim';
     %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject\JointDampingOpt_passVals.asim';
-    temp = load([pwd,'/sensSimData.mat'],'sensSimData_ank');
-    simText= temp.sensSimData_ank;
-    %simText = importdata(simPath);
+    %temp = load([pwd,'/sensSimData.mat'],'sensSimData_ank');
+    %simText= temp.sensSimData_ank;
+    simText = importdata(simPath);
     freq = 100; dt = 1/freq;
 
     % Start by turning off all tonic stimuli
@@ -14,7 +15,7 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     [simText{find(contains(simText,'<TimeStep>0.00054</TimeStep>'))}] = deal(['<TimeStep>',num2str(dt/10),'</TimeStep>']);
 
     % Extract parameters from the ASIM file
-    parGet = {['<Name>ad-',muscName],5};
+    parGet = {['<ID>ad-',muscName,'-ID</ID>'],6};
 
     parGetOut = cell(size(parGet,1),1);
     for jj = 1:size(parGet,1)
@@ -76,6 +77,7 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     cpStart = dt*(ts.cpstart+3);
     cpEnd = dt*(ts.cpend+5);
     simText = set_const_pos_stim(simText,cPos,NWmotion(cPosInd,:),cpStart,cpEnd);
+end
 
     function simText = set_const_pos_stim(simText,toggle,inPos,stimTime0,stimTime1)
         sInds = find(contains(simText,'<Name>Constant'));
@@ -94,10 +96,10 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
                     uLine = simText(find(contains(simText(jInfo{ii,1}:end),'<UpperLimit>'),1,'first')+jInfo{ii,1}+2);
                     lVal = double((extractBetween(string(lLine),'>','<')));
                     uVal = double((extractBetween(string(uLine),'>','<')));
-                end
-                if constPos(ii) < lVal || constPos(ii) > uVal
-                    error(['Trying to set constant motor position, ',num2str((180/pi)*constPos(ii)),', outside joint limits [',num2str((180/pi)*lVal),',',...
-                        num2str((180/pi)*uVal),'] for joint',jInfo{ii,2}])
+                    if constPos(ii) < lVal || constPos(ii) > uVal
+                        error(['Trying to set constant motor position, ',num2str((180/pi)*constPos(ii)),', outside joint limits [',num2str((180/pi)*lVal),',',...
+                            num2str((180/pi)*uVal),'] for joint',jInfo{ii,2}])
+                    end
                 end
             end
             for ii = 1:length(sInds)
@@ -124,4 +126,3 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
             error('Toggle is not set to on or off')
         end
     end
-end

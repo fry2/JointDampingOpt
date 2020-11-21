@@ -16,7 +16,12 @@ function [outScore,outVal] = objFun_whole_leg_passive(inVec,NWmotion,mInfo,stimL
             NWmotion_temp = NWmotion{ii,kk};
             [simText,stimID] = simText_editor(kinematic_muscle_name{1,ii},NWmotion_temp,'on',ts{ii});
             numZones = length(unique(cell2mat(mInfo(:,2))));
-            outVal(jj,counter) = objFun_passive(simText,NWmotion_temp,inVec,'all',stimID,stimLevel,numZones,mInfo);
+            if length(stimLevel)>1
+                stimIn = stimLevel(jj);
+            else
+                stimIn = stimLevel;
+            end
+            outVal(jj,counter) = objFun_passive(simText,NWmotion_temp,inVec,'all',stimID,stimIn,numZones,mInfo);
             counter = counter + 1;
         end
     end

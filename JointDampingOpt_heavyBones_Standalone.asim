@@ -1717,7 +1717,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="0.010522" y="-0.00542" z="0.008854"/>
+<Position x="0.006778" y="-0.007486" z="0.006731"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -2024,8 +2024,8 @@
 <MaxHydroTorque>20</MaxHydroTorque>
 <Magnus>0</Magnus>
 <EnableFluids>False</EnableFluids>
-<Density>8.26</Density>
-<Mass>14.141</Mass>
+<Density>8.178</Density>
+<Mass>14.001</Mass>
 <COM x="-0.008315" y="-0.001975" z="0.015642"/>
 <Freeze>False</Freeze>
 <MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
@@ -2094,7 +2094,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>8c98b23b-b4ff-417a-bcd8-0aa4d44eb2b1</ID>
+<ID>764059f7-eac4-4994-8cdf-d07090df022a</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -2104,7 +2104,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>96459bb7-cc92-4e62-9cc9-f38730c8dcdb</ID>
+<ID>1264bb09-bbc1-4857-bed6-3110af3b380e</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -2214,7 +2214,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.006201" y="-0.003976" z="-0.000436"/>
+<Position x="-0.005295" y="-0.006303" z="0.002311"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -2398,7 +2398,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.010558" y="0.000266" z="0.033229"/>
+<Position x="-0.009382" y="0.000822" z="0.033491"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -2446,7 +2446,7 @@
 <Diffuse Red="1" Green="0" Blue="1" Alpha="1"/>
 <Attachments>
 <AttachID>c9945070-32b4-4104-8347-2a701bc74c70</AttachID>
-<AttachID>3cb22bbd-6500-47bf-9791-b9cfe0c3462d</AttachID>
+<AttachID>da98174c-94e9-4353-a4bf-a1550d37db65</AttachID>
 <AttachID>afb88b6f-5ef0-4808-87db-cd475f805f46</AttachID>
 <AttachID>1f477509-9025-405e-847b-7d048271333c</AttachID>
 </Attachments>
@@ -2681,7 +2681,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.012657" y="-0.002802" z="0.031648"/>
+<Position x="-0.012946" y="-0.002802" z="0.032953"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -2981,8 +2981,8 @@
 <MaxHydroTorque>20</MaxHydroTorque>
 <Magnus>0</Magnus>
 <EnableFluids>False</EnableFluids>
-<Density>2.471</Density>
-<Mass>3.339</Mass>
+<Density>2.465</Density>
+<Mass>3.331</Mass>
 <COM x="-0.001833" y="-0.017219" z="-0.00501"/>
 <Freeze>False</Freeze>
 <MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
@@ -3051,7 +3051,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>56de53e9-0b95-4e9f-b002-c9cac86b519d</ID>
+<ID>9ac1c68e-cc68-4451-8a84-561b4a487fec</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -3061,7 +3061,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>8c094ed2-99da-4b34-9fc6-0fb30d754fc8</ID>
+<ID>6a09fd81-8aa1-48bc-89ef-2aa4a35e7796</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -3257,52 +3257,6 @@
 <Shininess>64</Shininess>
 <Texture/>
 <Position x="0.001375" y="-0.041618" z="-0.006197"/>
-<Rotation x="0" y="0" z="0"/>
-<DraggerSize>-1</DraggerSize>
-<Type>Attachment</Type>
-<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
-<SynchWithRobot>False</SynchWithRobot>
-<SynchUpdateInterval>0</SynchUpdateInterval>
-<IsContactSensor>False</IsContactSensor>
-<IsCollisionObject>False</IsCollisionObject>
-<BuoyancyCenter x="0" y="0" z="0"/>
-<BuoyancyScale>1</BuoyancyScale>
-<LinearDrag x="1" y="1" z="1"/>
-<AngularDrag x="0.05" y="0.05" z="0.05"/>
-<MaxHydroForce>50</MaxHydroForce>
-<MaxHydroTorque>20</MaxHydroTorque>
-<Magnus>0</Magnus>
-<EnableFluids>False</EnableFluids>
-<Density>1</Density>
-<Mass>0</Mass>
-<COM x="0" y="0" z="0"/>
-<Freeze>False</Freeze>
-<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
-<FoodSource>False</FoodSource>
-<FoodQuantity>100</FoodQuantity>
-<MaxFoodQuantity>10000</MaxFoodQuantity>
-<FoodReplenishRate>1</FoodReplenishRate>
-<FoodEnergyContent>1000</FoodEnergyContent>
-<Radius>0.0005</Radius>
-<LatitudeSegments>20</LatitudeSegments>
-<LongtitudeSegments>20</LongtitudeSegments>
-</RigidBody>
-<RigidBody>
-<Name>MedialGastrocnemiusIns Tibia LH_AnkleZ Ext</Name>
-<ID>3cb22bbd-6500-47bf-9791-b9cfe0c3462d</ID>
-<Description/>
-<GraphicsAlpha>1</GraphicsAlpha>
-<CollisionsAlpha>0.5</CollisionsAlpha>
-<JointsAlpha>0.5</JointsAlpha>
-<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
-<SimulationAlpha>1</SimulationAlpha>
-<IsVisible>True</IsVisible>
-<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
-<Diffuse Red="1" Green="0" Blue="1" Alpha="1"/>
-<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
-<Shininess>64</Shininess>
-<Texture/>
-<Position x="-0.003783" y="-0.006148" z="0.002931"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -3970,7 +3924,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.002479" y="0.000802" z="-0.002726"/>
+<Position x="-0.002479" y="0.000802" z="-0.002979"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -4224,8 +4178,8 @@
 <MaxHydroTorque>20</MaxHydroTorque>
 <Magnus>0</Magnus>
 <EnableFluids>False</EnableFluids>
-<Density>3</Density>
-<Mass>1.571</Mass>
+<Density>5.725</Density>
+<Mass>2.997</Mass>
 <COM x="0.005833" y="-0.003" z="0.000298"/>
 <Freeze>False</Freeze>
 <MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
@@ -4294,7 +4248,7 @@
 <Loss>0</Loss>
 </Relaxation4>
 <Relaxation5>
-<ID>8eec8115-ee23-48ef-98ae-3ff20d5a296b</ID>
+<ID>82605493-48ef-4e0d-a10f-7075e3c9b9cf</ID>
 <Name>Y Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -4304,7 +4258,7 @@
 <Loss>0</Loss>
 </Relaxation5>
 <Relaxation6>
-<ID>d1e96b24-9720-4bdf-93a8-e5ee0fe733a5</ID>
+<ID>f86f4b55-eb47-4396-806c-876bf6025ddb</ID>
 <Name>Z Axis Rotation</Name>
 <Type>Default</Type>
 <Enabled>False</Enabled>
@@ -5189,7 +5143,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.004572" y="0.000105" z="-0.000612"/>
+<Position x="-0.004572" y="0.000105" z="-0.000263"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -5614,7 +5568,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.001437" y="0.000815" z="-0.002518"/>
+<Position x="-0.001692" y="0.000815" z="-0.002518"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -6135,6 +6089,52 @@
 <Shininess>64</Shininess>
 <Texture/>
 <Position x="-0.00065" y="-0.000104" z="-0.004042"/>
+<Rotation x="0" y="0" z="0"/>
+<DraggerSize>-1</DraggerSize>
+<Type>Attachment</Type>
+<PartType>AnimatGUI.DataObjects.Physical.Bodies.Attachment</PartType>
+<SynchWithRobot>False</SynchWithRobot>
+<SynchUpdateInterval>0</SynchUpdateInterval>
+<IsContactSensor>False</IsContactSensor>
+<IsCollisionObject>False</IsCollisionObject>
+<BuoyancyCenter x="0" y="0" z="0"/>
+<BuoyancyScale>1</BuoyancyScale>
+<LinearDrag x="1" y="1" z="1"/>
+<AngularDrag x="0.05" y="0.05" z="0.05"/>
+<MaxHydroForce>50</MaxHydroForce>
+<MaxHydroTorque>20</MaxHydroTorque>
+<Magnus>0</Magnus>
+<EnableFluids>False</EnableFluids>
+<Density>1</Density>
+<Mass>0</Mass>
+<COM x="0" y="0" z="0"/>
+<Freeze>False</Freeze>
+<MaterialTypeID>DEFAULTMATERIAL</MaterialTypeID>
+<FoodSource>False</FoodSource>
+<FoodQuantity>100</FoodQuantity>
+<MaxFoodQuantity>10000</MaxFoodQuantity>
+<FoodReplenishRate>1</FoodReplenishRate>
+<FoodEnergyContent>1000</FoodEnergyContent>
+<Radius>0.0005</Radius>
+<LatitudeSegments>20</LatitudeSegments>
+<LongtitudeSegments>20</LongtitudeSegments>
+</RigidBody>
+<RigidBody>
+<Name>MedialGastrocnemiusVia Tibia LH_AnkleZ Ext</Name>
+<ID>da98174c-94e9-4353-a4bf-a1550d37db65</ID>
+<Description/>
+<GraphicsAlpha>1</GraphicsAlpha>
+<CollisionsAlpha>0.5</CollisionsAlpha>
+<JointsAlpha>0.5</JointsAlpha>
+<ReceptiveFieldsAlpha>0.5</ReceptiveFieldsAlpha>
+<SimulationAlpha>1</SimulationAlpha>
+<IsVisible>True</IsVisible>
+<Ambient Red="0.0980392" Green="0.0980392" Blue="0.0980392" Alpha="1"/>
+<Diffuse Red="0.752941" Green="0" Blue="0.752941" Alpha="1"/>
+<Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
+<Shininess>64</Shininess>
+<Texture/>
+<Position x="-0.000367" y="-0.037878" z="-0.005111"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -7009,7 +7009,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.008886" y="0.001288" z="0.032775"/>
+<Position x="-0.006697" y="-0.000321" z="0.034454"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -7101,7 +7101,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.011869" y="0.0004" z="0.031364"/>
+<Position x="-0.0107" y="0.000806" z="0.033491"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -7147,7 +7147,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.005559" y="-0.002026" z="0.032495"/>
+<Position x="-0.005428" y="-0.002734" z="0.030047"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -7285,7 +7285,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="-0.009847" y="-0.000757" z="0.020484"/>
+<Position x="-0.0091351" y="0.0034644" z="0.0164319"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -7664,7 +7664,7 @@
 <Specular Red="0.25098" Green="0.25098" Blue="0.25098" Alpha="1"/>
 <Shininess>64</Shininess>
 <Texture/>
-<Position x="0.020879" y="-0.003121" z="0.012704"/>
+<Position x="0.017828" y="-0.0015" z="0.014"/>
 <Rotation x="0" y="0" z="0"/>
 <DraggerSize>-1</DraggerSize>
 <Type>Attachment</Type>
@@ -12671,8 +12671,8 @@
 <HudItem>
 <ModuleName/>
 <Type>HudText</Type>
-<Name>67402062-a76f-4832-b9ae-ac99fee1063e</Name>
-<ID>67402062-a76f-4832-b9ae-ac99fee1063e</ID>
+<Name>48c5ba30-439c-4fa4-8a8a-818137a852f5</Name>
+<ID>48c5ba30-439c-4fa4-8a8a-818137a852f5</ID>
 <Type>HudText</Type>
 <CharSize>30</CharSize>
 <Text>Time: %3.3f</Text>

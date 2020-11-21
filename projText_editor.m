@@ -1,5 +1,6 @@
 function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
-    projPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt.aproj';
+    %projPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_compAnkle.aproj';
+    projPath = 'G:\My Drive\Rat\SynergyControl\Animatlab\SynergyWalking\SynergyControl.aproj';
     projText = importdata(projPath);
     freq = 100; dt = 1/freq;
 
@@ -61,13 +62,26 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
     end
     
     for tt = 1:size(mInfo,1)
+        b = passVals6(mInfo{tt,2},1); ks = passVals6(mInfo{tt,2},2); kp = passVals6(mInfo{tt,2},3);
         mInd = find(contains(projText,mInfo{tt,1}));
+        Fmax = double(extractBetween(string(projText{find(contains(projText(mInd:end),'<MaximumTension'),1)+mInd-1}),'Value="','"'));
         ksInd = find(contains(projText(mInd:end),'<Kse Value='),1,'first')+mInd-1;
         kpInd = ksInd + 1;
         bInd = ksInd + 2;
-        projText{bInd} = insert_content_into_line(projText{bInd},passVals6(mInfo{tt,2},1));
-        projText{ksInd} = insert_content_into_line(projText{ksInd},passVals6(mInfo{tt,2},2));
-        projText{kpInd} = insert_content_into_line(projText{kpInd},passVals6(mInfo{tt,2},3));
+        projText{bInd} = insert_content_into_line(projText{bInd},b);
+        projText{ksInd} = insert_content_into_line(projText{ksInd},ks);
+        projText{kpInd} = insert_content_into_line(projText{kpInd},kp);
+        stmax = (ks+kp)/ks*Fmax;
+        yoff = -.007*stmax;
+        stRoot = find(contains(projText(mInd:end),'<StimulusTension>'),1,'first')+mInd-1;
+            stUB = stRoot+12;
+                projText{stUB} = insert_content_into_line(projText{stUB},stmax);
+            stSTmax = stRoot+16;
+                projText{stSTmax} = insert_content_into_line(projText{stSTmax},stmax);
+            stSteep = stRoot+17;
+                projText{stSteep} = insert_content_into_line(projText{stSteep},459.512);
+            stYoff = stRoot+18;
+                projText{stYoff} = insert_content_into_line(projText{stYoff},yoff);
     end
     
     % Set Joint level parameters
@@ -80,7 +94,13 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
             projText{temp} = replaceBetween(projText{temp},'>','</','False');
         end
     end
-    
+
+    % Write simText to an ASIM document
+    fileID = fopen('C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject\JointDampingOpt_injected.aproj','w');
+    fprintf(fileID,'%s\n',projText{:});
+    fclose(fileID);
+
+end
     function outLine = insert_content_into_line(oldStr,content)
         quoteLocs = strfind(oldStr,'"');
         if ~ischar(content)
@@ -93,10 +113,3 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
                 'None',oldStr(quoteLocs(4):quoteLocs(5)),content,oldStr(quoteLocs(6):end)];
         end
     end
-
-    % Write simText to an ASIM document
-    fileID = fopen('C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject\JointDampingOpt_injected.aproj','w');
-    fprintf(fileID,'%s\n',projText{:});
-    fclose(fileID);
-
-end

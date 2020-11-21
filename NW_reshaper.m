@@ -1,4 +1,7 @@
 function [outMat,ts] = NW_reshaper(inMat)
+    % inMat: double array (nx3): hip, knee, ankle joint angle waveforms for a hanging leg
+    % This function "reshapes" the waveform such that passive and active components are in a different order
+
     meanStart = mean(inMat(1:200,:));
     sigMag = sum((inMat-meanStart).^2,2);
     [~,locs] = findpeaks(flip(sigMag),'MinPeakHeight',.2*max(sigMag));
