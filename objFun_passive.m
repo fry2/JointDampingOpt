@@ -1,14 +1,16 @@
 function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grade,stimID,stimLevel,numZones,muscZones)
+    stimVals = inVec(1:7); inVec = inVec(9:end);
     if length(inVec)==3
         inMat = repmat(inVec,numZones,1);
     else
-        inMat = reshape(inVec,3,numZones)';
+        inMat = reshape(inVec,2,numZones)';
     end
     mInds = find(contains(simText,'<Type>LinearHillMuscle</Type>'));
     for ii = 1:length(mInds)
         b = inMat(muscZones{ii,2},1);
-        ks = inMat(muscZones{ii,2},2);
-        kp = inMat(muscZones{ii,2},3);
+        kp = inMat(muscZones{ii,2},2);
+        %ks = kp*inVec(8);
+        ks = kp*100;
         Fmax = double(extractBetween(string(simText{find(contains(simText(mInds(ii):end),'<MaximumTension>'),1)+mInds(ii)-1}),'>','</'));
         dampInd = find(contains(simText(mInds(ii):end),'<B>'),2)+mInds(ii)-1;
         ksInd = find(contains(simText(mInds(ii):end),'<Kse>'),1,'first')+mInds(ii)-1;
@@ -16,8 +18,8 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
         simText{dampInd(2)} = replaceBetween(simText{dampInd(2)},'>','</',num2str(b));
         simText{ksInd} = replaceBetween(simText{ksInd},'>','</',num2str(ks));
         simText{kpInd} = replaceBetween(simText{kpInd},'>','</',num2str(kp));
-        yoff = -.007*(ks+kp)/ks*Fmax;
-        stmax = (ks+kp)/ks*Fmax;
+        stmax = (1+kp/ks)*Fmax;
+        yoff = -.01*stmax;
         stRoot = find(contains(simText(mInds(ii):end),'<StimulusTension>'),1,'first')+mInds(ii)-1;
             stUB = stRoot+7;
                 simText{stUB} = replaceBetween(simText{stUB},'>','</',num2str(stmax));
@@ -31,7 +33,12 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
     
     currentInd = find(contains(simText,stimID),1,'first')+14;
     outStr = simText{currentInd};
-    simText{currentInd} = replaceBetween(outStr,'>','</',[num2str(stimLevel),'e-009']);
+    stimLevel = stimVals(stimLevel);
+    if stimLevel == 0
+        simText{currentInd} = replaceBetween(outStr,'>','</',num2str(stimLevel));   
+    else
+        simText{currentInd} = replaceBetween(outStr,'>','</',[num2str(stimLevel),'e-009']);    
+    end
     
     % Generate a random name for this run
         [~,jobID] = fileparts(tempname);
@@ -60,7 +67,10 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
             jointMotion = [];
             return
         end
-        jointMotion = ds.data(:,3:5).*(180/pi);
+        try jointMotion = ds.data(:,3:5).*(180/pi);
+        catch
+            keyboard
+        end
         
         temp(:,1) = jointMotion(1:end-9,find(contains(ds.colheaders,'Hip'))-2);
         temp(:,2) = jointMotion(1:end-9,find(contains(ds.colheaders,'Knee'))-2);
@@ -77,19 +87,19 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
         NWmotion = NWmotion(1:minLen,:);
         
         diffVec = NWmotion-jointMotion;
-        diff2 = NWmotion(171:265,:)-jointMotion(171:265,:);
+        diff2 = NWmotion(171:minLen,:)-jointMotion(171:minLen,:);
         diff3 = NWmotion(315:minLen,:)-jointMotion(315:minLen,:);
         diff4 = (NWmotion(181,:)-NWmotion(173,:))/(181-173)-(jointMotion(181,:)-jointMotion(173,:))/(181-173);
-        diff5 = NWmotion(180,:)-jointMotion(180,:);
-        diff6 = NWmotion(325,:)-jointMotion(325,:);
-        diff7 = NWmotion(10:143,:)-jointMotion(10:143,:);
+        diff5 = NWmotion(182,:)-jointMotion(182,:);
+        diff6 = NWmotion(171:218,:)-jointMotion(171:218,:);
+        diff7 = NWmotion(313:minLen,:)-jointMotion(313:minLen,:);
+        diff8 = (NWmotion(325,:)-NWmotion(320,:))/(325-320)-(jointMotion(325,:)-jointMotion(320,:))/(325-320);
         
-        sum_square = @(inMat) sum(sum((inMat).^2));
+        sum_square = @(inMat) sum(sum(inMat.^2,2));
         
         if strcmp(joint2grade,'all')
-            outVec = [sum_square(diffVec), sum_square(diff2), sum_square(diff3), sum_square(diff4), sum_square(diff5),...
-                sum_square(diff6) sum_square(diff7)];
-            outVecWt = outVec.*[1.5,10,20,2500,110,85,5];
+            outVec = [sum_square(diff6) sum_square(diff7)];
+            outVecWt = outVec.*[1 1];
             outVal = sum(outVecWt);
         else
             outVal = sum(sum((diffVec(:,joint2grade)).^2));

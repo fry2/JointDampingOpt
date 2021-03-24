@@ -1,11 +1,14 @@
 function muscZones = zoning_sorter(simText,numZones)
+    if ischar(simText) || isstring(simText)
+        simText = importdata(simText);
+    end    
     mInds = find(contains(simText,'<Type>LinearHillMuscle</Type>'));
     muscZones = cell(38,2);
     for ii = 1:length(mInds)
         attdir = {};
         attsInd = find(contains(simText(mInds(ii):end),'<Attachments>'),1,'first')+mInds(ii)-1;
         attcounter = 1;
-        while ~strcmp(simText(attsInd+attcounter),'</Attachments>') && attcounter <= 10
+        while ~contains(simText{attsInd+attcounter},'</Attachments>') && attcounter <= 10
             attdir{attcounter,1} = char(extractBetween(string(simText{attsInd+attcounter}),'>','</'));
             attcounter = attcounter + 1;
         end

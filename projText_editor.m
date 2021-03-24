@@ -3,12 +3,16 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
     projPath = 'G:\My Drive\Rat\SynergyControl\Animatlab\SynergyWalking\SynergyControl.aproj';
     projText = importdata(projPath);
     freq = 100; dt = 1/freq;
+    
+    projText{2} = '<ProjectName>JointDampingOpt_injected</ProjectName>';
+    projText{3} = '<SimulationFile>JointDampingOpt_injected_Standalone.asim</SimulationFile>';
+    projText{9} = '<ProjectPath>C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject\</ProjectPath>';
 
     % Start by turning off all tonic stimuli
     [projText{find(contains(projText,'<ClassName>AnimatGUI.DataObjects.ExternalStimuli.TonicCurrent</ClassName>'))+7}] = deal('<Enabled>False</Enabled>');
 
     % Change the datachart time step to depend dt in order to align experimental frequency to simulation
-    [projText{find(contains(projText,'<TimeStep Value="0.54"'))}] = deal(['<TimeStep Value="',num2str(dt*100),'" Scale="milli" Actual="',num2str(dt/10),'"/>']);
+    %[projText{find(contains(projText,'<TimeStep Value="0.54"'))}] = deal(['<TimeStep Value="',num2str(dt*100),'" Scale="milli" Actual="',num2str(dt/10),'"/>']);
 
     %stimID = ['<ID>stTC1-',parGetOut{1},'</ID>'];
     stimTime0 = 2.29;
@@ -19,34 +23,49 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
 
     % The system level parameters we want to modify in the ASIM file organized as:
     % parameter string to find, line modifier from that string, value to set it to
-    parSet = {'<SimEndTime',0,((length(NWmotion)-1)*dt);...
-              '<PhysicsTimeStep',0,physTS;...
-              stimID,5,'True';...
-              stimID,1,stimTime0;...
-              stimID,2,stimTime1;...
-              stimID,13,.1;...
-              stimID,14,0;...
-              stimID,15,.1;...
-              stimID,16,0};
+%     parSet = {'<SimEndTime',0,((length(NWmotion)-1)*dt);...
+%               '<PhysicsTimeStep',0,physTS;...
+%               stimID,5,'True';...
+%               stimID,1,stimTime0;...
+%               stimID,2,stimTime1;...
+%               stimID,13,.1;...
+%               stimID,14,0;...
+%               stimID,15,.1;...
+%               stimID,16,0};
+%       parSet = {'<SimEndTime',0,((length(NWmotion)-1)*dt);...
+%               '<PhysicsTimeStep',0,physTS};
+% 
+%     for jj = 1:size(parSet,1)
+%         parInd = find(contains(projText,parSet{jj,1}))+parSet{jj,2};
+%         if ~isempty(parInd)
+%             oldStr = projText{parInd};
+%             projText{parInd} = insert_content_into_line(oldStr,parSet{jj,3});
+%         else
+%             warning('Parameter not found')
+%             keyboard
+%         end
+%     end
 
-    for jj = 1:size(parSet,1)
-        parInd = find(contains(projText,parSet{jj,1}))+parSet{jj,2};
-        if ~isempty(parInd)
-            oldStr = projText{parInd};
-            projText{parInd} = insert_content_into_line(oldStr,parSet{jj,3});
-        else
-            warning('Parameter not found')
-            keyboard
+    % Copy all AFORMs form the source folder into our new project folder
+    % This ensures that we're saving the same data that the original APROJ file saved
+    projRoot = fileparts(projPath);
+    aFormNames = extractBetween(projText(contains(projText,'.aform')),'&lt;ExternalFile&gt;','.aform&lt;/ExternalFile&gt;');
+    for ii = 1:length(aFormNames)
+        [status,msg,msgID] = copyfile([projRoot,'\',aFormNames{ii},'.aform'],...
+                                      'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject');
+        if status ~=1
+            disp(msg); disp(msgID);
+            error('Check AFORM copying process')
         end
     end
-
+    
     % Open the joint motion AFORM file and edit it
     jAformPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\InjectedProject\JointMotion_injected.aform';
     jAformData = importdata(jAformPath);
     endTimeInd = find(contains(jAformData,'<CollectEndTime'));
     stepInd = find(contains(jAformData,'<UpdateDataInterval'));
-    jAformData{endTimeInd} = insert_content_into_line(jAformData{endTimeInd},((length(NWmotion)-2)*dt));
-    jAformData{stepInd} = insert_content_into_line(jAformData{stepInd},dt);
+%     jAformData{endTimeInd} = insert_content_into_line(jAformData{endTimeInd},((length(NWmotion)-2)*dt));
+%     jAformData{stepInd} = insert_content_into_line(jAformData{stepInd},dt);
     % Write simText to an ASIM document
     fileID = fopen(jAformPath,'w');
     fprintf(fileID,'%s\n',jAformData{:});
@@ -54,15 +73,19 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
     
     jmInds = find(contains(projText,'JointMotion'));
     for ll = 1:length(jmInds)
-        projText{jmInds(ll)} = strrep(projText{jmInds(ll)},'JointMotion','JointMotion_injected');
+        if ~contains(projText{jmInds(ll)},'JointMotion_injected')
+            projText{jmInds(ll)} = strrep(projText{jmInds(ll)},'JointMotion','JointMotion_injected');
+        end
     end
-  
+    
     if size(passVals6,1) == 1
-        passVals6 = reshape(passVals6,3,length(passVals6)/3)';
+        passVals6 = reshape(passVals6,2,length(passVals6)/2)';
     end
     
     for tt = 1:size(mInfo,1)
-        b = passVals6(mInfo{tt,2},1); ks = passVals6(mInfo{tt,2},2); kp = passVals6(mInfo{tt,2},3);
+        b = passVals6(mInfo{tt,2},1);  kp = passVals6(mInfo{tt,2},2);
+        %ks = passVals6(mInfo{tt,2},2);
+        ks = 100*kp;
         mInd = find(contains(projText,mInfo{tt,1}));
         Fmax = double(extractBetween(string(projText{find(contains(projText(mInd:end),'<MaximumTension'),1)+mInd-1}),'Value="','"'));
         ksInd = find(contains(projText(mInd:end),'<Kse Value='),1,'first')+mInd-1;
@@ -71,8 +94,8 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
         projText{bInd} = insert_content_into_line(projText{bInd},b);
         projText{ksInd} = insert_content_into_line(projText{ksInd},ks);
         projText{kpInd} = insert_content_into_line(projText{kpInd},kp);
-        stmax = (ks+kp)/ks*Fmax;
-        yoff = -.007*stmax;
+        stmax = (1+kp/ks)*Fmax;
+        yoff = -.01*stmax;
         stRoot = find(contains(projText(mInd:end),'<StimulusTension>'),1,'first')+mInd-1;
             stUB = stRoot+12;
                 projText{stUB} = insert_content_into_line(projText{stUB},stmax);

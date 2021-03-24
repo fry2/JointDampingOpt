@@ -11,27 +11,25 @@
     % Input6 = 0, Output6 = 0: using 38 muscle parameters, refine those values and output/save 38 muscle parameters
     % Input6 = 1, Output6 = 1: using 6 muscle parameters, refine those values and output/save 6 muscle parameters
     % Input6 = 1, Output6 = 0: using 6 muscle parameters, cast those values out to the correct muscles and refine them
-    input6zones = 1; out6zones = 1;
+    input6zones = 0; out6zones = 0;
 
     try 
         if input6zones
-            pvGlobal_old = pvStruct.pvGlobal6;
+            passVals = [pvStruct.pvGlobal6_stimVals,pvStruct.pvGlobal6_ksRatio,pvStruct.pvGlobal6];
             pvG_grades_old = pvStruct.pvGlobal6_grades;
         else
-            pvGlobal_old = pvStruct.pvGlobal38;
+            passVals = [pvStruct.pvGlobal38_stimVals,pvStruct.pvGlobal38_ksRatio,pvStruct.pvGlobal38];
             pvG_grades_old = pvStruct.pvGlobal38_grades;
         end
          
     catch
         if input6zones
-            pvGlobal_old = repmat([5 500 100],1,6);
+            passVals = repmat([46 100 100],1,6);
         else
-            pvGlobal_old = repmat([5 500 100],1,38);
+            passVals = repmat([5 500 100],1,38);
         end
         pvG_grades_old = 1e8*ones(1,length(kinematic_currents));
     end
-
-    passVals = pvGlobal_old;
 
 %% Generate the input waveforms for each muscle and trial that you want the optimizer to follow
     [maxJM,maxtrial] = NW_jointmotion_maxtrial_all(kinematic_data,0);
@@ -58,33 +56,48 @@
             reshapedJM{ii,jj} = [temp(1:ts{ii,jj}.tcstart,:);maxTail];
         end
     end
+    
 %% Begin the Optimization process
     stimLevel = 20;
-    %stimLevel = [15,20,10,20,15,15,15];
-    maxTimeTrial = 60; %in min
+    maxTimeTrial = 90; %in min
+    time_predictor(maxTimeTrial);
+    %
     [simText,stimID] = simText_editor(kinematic_muscle_name{2,1},reshapedJM{1},'on',ts{1});
-    %%%%%% JUST TO RESET THINGS
-    %passVals = repmat([1e-3 1 1],1,numZones);
-    %passVals = passValsOld;
-    %%%%%%
+%     passVals = [passVals(1:7),100,passVals(8:end)];
+%     passVals([1 3 4 6]) = passVals([1 3 4 6]).*1.2;
+%     passVals = passVals(9:end);
+%     passVals = [45,passVals];
+    %passVals(1:7) = 20; passVals(8) = 228; passVals(9:20) = repmat([50 100],1,6);
+    %passVals = [passVals(1:7),100,passVals(17:end)];
+    passVals(8) = 100;
     [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,reshapedJM,passVals,stimLevel,maxTimeTrial,input6zones,out6zones,ts);
+    stimVals = passVals(1:7); ksRatio = passVals(8); passVals = passVals(9:end);
 %% Now that we have passive values, we need to analyze their effectiveness at recreating NW waveforms
     outJM = cell(1,7); pvG_grades_new = zeros(1,7);
     if 0
-        passVals = pvStruct.pvGlobal38;
-        mInfo = zoning_sorter(simText,38);
+        if 1
+            passVals = pvStruct.pvGlobal38;
+            stimVals = pvStruct.pvGlobal38_stimVals;
+            ksRatio = pvStruct.pvGlobal38_ksRatio;
+            mInfo = zoning_sorter(simText,38);
+        else
+%             load('goodPassVals3.mat','goodStimVals6','goodPassVals6')
+%             passVals = [20.*ones(1,7),repmat([25 9e4 100],1,6)];
+%             stimVals = goodStimVals6;
+%             passVals = goodPassVals6;
+            passVals = pvStruct.pvGlobal6;
+            stimVals = pvStruct.pvGlobal6_stimVals;
+            ksRatio = pvStruct.pvGlobal6_ksRatio;
+            mInfo = zoning_sorter(simText,6);
+        end
     end
     for ii = 1:7
         NWmotion_temp = reshapedJM{ii,maxtrial(ii)};
-        if length(stimLevel) > 1
-            stimIn = stimLevel(ii);
-        else
-            stimIn = 20;
-        end
         if ~any(isnan(NWmotion_temp),'all')
             [simText,stimID] = simText_editor(kinematic_muscle_name{2,ii},NWmotion_temp,'on',ts{ii});
             numZones = length(unique(cell2mat(mInfo(:,2))));
-            [pvG_grades_new(ii),jm] = objFun_passive(simText,NWmotion_temp,passVals,'all',stimID,stimIn,numZones,mInfo);
+%             [pvG_grades_new(ii),jm] = objFun_passive(simText,NWmotion_temp,passVals,'all',stimID,stimVals(ii),numZones,mInfo);
+            [pvG_grades_new(ii),jm] = objFun_passive(simText,NWmotion_temp,[stimVals,ksRatio,passVals],'all',stimID,ii,numZones,mInfo);
             outJM{ii} = jm;
         else
             outJM{ii} = NaN(size(NWmotion_temp));
@@ -97,9 +110,11 @@
     if newScore < oldScore
         disp(['New score (',num2str(newScore),') is better than old score (',num2str(oldScore),'), SAVING new values (',num2str(telapsed/60),' min).'])
         % Generate an APROJ file with the updated values
-            NWmotion = reshapedJM{1};
-            [projText] = projText_editor(passVals,mInfo,stimID,NWmotion); 
+            %NWmotion = reshapedJM{1};
+            [projText] = projText_editor(passVals,mInfo,stimID,reshapedJM{1}); 
         pvStruct.(['pvGlobal',num2str(numZones)]) = passVals;
+        pvStruct.(['pvGlobal',num2str(numZones),'_ksRatio']) = ksRatio;
+        pvStruct.(['pvGlobal',num2str(numZones),'_stimVals']) = stimVals;
         pvStruct.(['pvGlobal',num2str(numZones),'_grades']) = pvG_grades_new;
         save('pvStruct.mat','pvStruct')
     else
@@ -107,8 +122,8 @@
     end
 return
 %% Individual trial jointMotion and NWmotion
-    trial = 5;
-    NWmotion = (reshapedJM{trial}-[98.4373 102.226 116.2473]).*(pi/180);
+    trial = 3;
+%     NWmotion = (reshapedJM{trial}-[98.4373 102.226 116.2473]).*(pi/180);
     NWmotion = reshapedJM{trial};
     jointMotion = outJM{trial};
     dt = .01;
@@ -118,7 +133,7 @@ return
              max([max(jointMotion(startInd:endInd,joints),[],'all') max(NWmotion(startInd:endInd,joints),[],'all')],[],'all')];
 
     figure('Position',[962,2,958,994]); 
-    subp(1) = subplot(2,1,1); 
+    subp(1) = subplot(2,1,1);
         plot(timeVec(startInd:endInd),NWmotion(startInd:endInd,joints),'LineWidth',2);
         legend({'Hip';'Knee';'Ankle'},'Location','northwest');
         title([kinematic_muscle_name{1,trial},' Desired Joint Motion']); 
@@ -139,8 +154,8 @@ return
 %% All trials in green black subplot
     figure('Position',[962,2,958,994])
     startInd = 1; endInd = 358;%endInd = min([length(NWmotion) length(jointMotion)]);
-    yLims = [min([reshapedJM{1,maxtrial(ii)};outJM{1}],[],'all') max([reshapedJM{1,maxtrial(ii)};outJM{1}],[],'all')];
-    for ii = 2:7
+    yLims = [min(cell2mat(cellfun(@min,[reshapedJM',outJM],'UniformOutput',false)),[],'all'), max(cell2mat(cellfun(@max,[reshapedJM',outJM],'UniformOutput',false)),[],'all')];
+    for ii = 2:5
         rMax = reshapedJM{ii,maxtrial(ii)};
         % Find the ylim bounds based on the maximum values from all the trials to plot
         if min([rMax;outJM{ii}],[],'all') < yLims(1)
@@ -169,50 +184,71 @@ return
           1,0,1;...
           0,1,1];
     switch 0
-        case 2
-            muscVals = reshape(passVals,3,numZones)';
-            mTemp = zoning_sorter(simText,6);
-        case 1
-            muscVals = reshape(pvStruct.pvGlobal38,3,38)';
-            mTemp = zoning_sorter(simText,6);
         case 0
-            muscVals = reshape(pvStruct.pvGlobal6,3,6)';
+            muscVals = reshape(passVals,2,numZones)';
+            if length(passVals)==2*6
+                mTemp = cell(6,2);mTemp(:,2) = num2cell(1:6);
+            else
+                mTemp = zoning_sorter(simText,6);
+            end
+        case 1
+            muscVals = reshape(pvStruct.pvGlobal38,2,38)';
+            mTemp = zoning_sorter(simText,6);
+        case 2
+            muscVals = reshape(pvStruct.pvGlobal6,2,6)';
             mTemp = cell(6,2);mTemp(:,2) = num2cell(1:6);
         otherwise
             error('error')
     end
     for ii = 1:size(muscVals,1)
-        scatter3(muscVals(ii,1),muscVals(ii,2),muscVals(ii,3),36,cm(mTemp{ii,2},:),'o','LineWidth',10)
+        scatter3(ksRatio*muscVals(ii,2),muscVals(ii,2),muscVals(ii,1),36,cm(mTemp{ii,2},:),'o','LineWidth',10)
         hold on
     end
     pbaspect([1 1 1])
     view([-43 18])
+    set(gca,'xscale','log','yscale','log');
     title('Viscoelastic Muscle Parameters','FontSize',18)
-    xlabel('B (Ns/m)','FontSize',18); ylabel('Ks (N/m)','FontSize',18), zlabel('Kp (N/m)','FontSize',18)
-%% Generate waveforms for modified muscle parameter
-mNum = 11; par2change = 'Ks'; newVal = 4;
-pvMat = reshape(pvStruct.pvGlobal38,3,38)';
-switch par2change
-    case 'B'
-        if floor(newVal)==newVal
-            bmin =(.54e-3/2)*(pvMat(mNum,2)+pvMat(mNum,3));
-            vals2test = [bmin, (pvMat(mNum,1)+bmin)/2, 1.1*pvMat(mNum,1), 1.5*pvMat(mNum,1)];
-            newVal = vals2test(newVal);
+    zlabel('B (Ns/m)','FontSize',18); xlabel('Ks (N/m)','FontSize',18), ylabel('Kp (N/m)','FontSize',18)
+%% Plot value changes over time
+    figure;
+    cm = [0,1,0;1,0,0;0.9216,0.8235,0.2039;0,0,1;1,0,1;0,1,1];
+    subplot(6,1,1)
+        plot(output.trialX(1:7,:)')
+        title('Stimulus Change')
+    subplot(6,1,2)
+        count = 1;
+        for ii = 9:2:size(output.trialX,1)
+            plot(output.trialX(ii,:)','Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
         end
-        pvMat(mNum,1) = newVal;
-    case 'Ks'
-        if floor(newVal)==newVal
-            kmax = (2/.54e-3)*pvMat(mNum,1)-pvMat(mNum,3);
-            vals2test = [.5*pvMat(mNum,2), .8*pvMat(mNum,2) (pvMat(mNum,2)+kmax)/2 kmax];
-            newVal = vals2test(newVal);
+        title('B Change')
+    subplot(6,1,3)
+        count = 1;
+        for ii = 10:2:size(output.trialX,1)
+            plot(output.trialX(ii,:)','Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
         end
-        pvMat(mNum,2) = newVal;
-    case 'Kp'
-        if floor(newVal)==newVal
-            kmax = (2/.54e-3)*pvMat(mNum,1)-pvMat(mNum,2);
-            vals2test = [.5*pvMat(mNum,3), .8*pvMat(mNum,3) (pvMat(mNum,3)+kmax)/2 kmax];
-            newVal = vals2test(newVal);
-        end
-        pvMat(mNum,3) = newVal;
+        title('Kp Change')
+    subplot(6,1,4)
+        plot(output.trialX(8,:))
+        title('Ks Ratio')
+    subplot(6,1,5)
+        plot(output.trialF)
+        title('All Function Fval')
+    subplot(6,1,6)
+        plot(history.fval,'LineWidth',3)
+        title('Iteration Fval')
+
+%%
+function time_predictor(maxTime)
+    [h,m] = hms(datetime('now')+minutes(maxTime)+minutes(.1*maxTime));
+    if h > 12
+        h = mod(h,12);
+    elseif h == 0
+        h = 12;
+    end
+    if m < 10
+        mprint = ['0',num2str(m)];
+    else
+        mprint = num2str(m);
+    end
+    disp(['Optimization should finish around ',num2str(h),':',mprint])
 end
-passVals = reshape(pvMat',1,3*38);

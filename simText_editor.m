@@ -8,11 +8,13 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     simText = importdata(simPath);
     freq = 100; dt = 1/freq;
 
+    simText = turn_off_walking_stims(simText);
+    
     % Start by turning off all tonic stimuli
     [simText{find(contains(simText,'<CurrentType>Tonic</CurrentType>'))-2}] = deal('<Enabled>False</Enabled>');
 
     % Change the datachart time step to depend dt in order to align experimental frequency to simulation
-    [simText{find(contains(simText,'<TimeStep>0.00054</TimeStep>'))}] = deal(['<TimeStep>',num2str(dt/10),'</TimeStep>']);
+    [simText{contains(simText,'<TimeStep>0.00054</TimeStep>')}] = deal(['<TimeStep>',num2str(dt/10),'</TimeStep>']);
 
     % Extract parameters from the ASIM file
     parGet = {['<ID>ad-',muscName,'-ID</ID>'],6};
@@ -24,17 +26,19 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
         temp = extractBetween(outStr,'>','<');
         parGetOut{jj,1} = temp{1};
     end
-
+    
+    timeVec = 0:dt:((length(NWmotion)-1)*dt);
     stimID = ['<ID>stTC1-',parGetOut{1},'</ID>'];
 %     stimTime0 = 2.29;
 %     stimTime1 = 2.79; %find way to set these automatically based on ang waveform
-    stimTime0  = dt*(length(NWmotion)-45);
-    stimTime1  = dt*(length(NWmotion)+17);
+    %stimTime0  = dt*(length(NWmotion)-45);
+    %stimTime1  = dt*(length(NWmotion)+17);
     simEndTime = dt*(length(NWmotion)+17);
+    stimTime0 = timeVec(ts.tcstart+10);
+    stimTime1 = simEndTime;
     %physTS = dt/10;
     physTS = .54e-3;
-    timeVec = 0:dt:((length(NWmotion)-1)*dt);
-
+    
     % The system level parameters we want to modify in the ASIM file organized as:
     % parameter string to find, line modifier from that string, value to set it to
     parSet = {'<SimEndTime>',0,simEndTime;...
@@ -124,5 +128,14 @@ end
             %disp('Constant positions turned off.')
         else
             error('Toggle is not set to on or off')
+        end
+    end
+    
+    function simText = turn_off_walking_stims(simText)
+        stimInds = find(contains(simText,'<Name>Walking_'))+2;
+        for ii = 1:length(stimInds)
+            if contains(simText{stimInds(ii)},'True')
+                simText{stimInds(ii)} = '<Enabled>False</Enabled>';
+            end
         end
     end
