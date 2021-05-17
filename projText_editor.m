@@ -79,13 +79,13 @@ function [projText] = projText_editor(passVals6,mInfo,stimID,NWmotion)
     end
     
     if size(passVals6,1) == 1
-        passVals6 = reshape(passVals6,2,length(passVals6)/2)';
+        passVals6 = reshape(passVals6,3,length(passVals6)/3)';
     end
     
     for tt = 1:size(mInfo,1)
-        b = passVals6(mInfo{tt,2},1);  kp = passVals6(mInfo{tt,2},2);
-        %ks = passVals6(mInfo{tt,2},2);
-        ks = 100*kp;
+        b = passVals6(mInfo{tt,2},1);  
+        kp = passVals6(mInfo{tt,2},2);
+        ks = passVals6(mInfo{tt,2},3);
         mInd = find(contains(projText,mInfo{tt,1}));
         Fmax = double(extractBetween(string(projText{find(contains(projText(mInd:end),'<MaximumTension'),1)+mInd-1}),'Value="','"'));
         ksInd = find(contains(projText(mInd:end),'<Kse Value='),1,'first')+mInd-1;

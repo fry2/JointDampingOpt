@@ -7,13 +7,15 @@ function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NW
     end
     history.x = [];
     history.fval = [];
+    
+    bb = []; cc = []; dd = [];
 
     if input6zones && ~out6zones
-        IPtemp = initialPoint(9:end); stimIn = initialPoint(1:7); initialPoint = [];
+        IPtemp = initialPoint(8:end); stimIn = initialPoint(1:7); initialPoint = [];
         if size(IPtemp,1) == 1
             IPtemp = reshape(IPtemp,2,length(IPtemp)/2)';
         end
-        counter = 9;
+        counter = 8;
         for mLine = 1:size(mInfo,1)
             initialPoint(counter:counter+1) = IPtemp(mInfo{mLine,2},:);
             counter = counter + 2;
@@ -36,17 +38,16 @@ function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NW
     physTS = double(extractBetween(string(simText{contains(simText,'<PhysicsTimeStep>')}),'>','<'));
     
     %% Pick inequality matrices
-        ksRatio = initialPoint(8);
-        aplacer = 8+(1:2:numZones*2);
+        aplacer = 7+(1:3:numZones*3);
         counter = 1;
         n = .5;
-        ALowBnd = zeros(8+numZones,8+2*numZones);
-        % Linear ineq maker (for defining VE props to be bigger than dt/2)
-        for ii = 8+(1:numZones)
-            ALowBnd(ii,aplacer(counter):aplacer(counter)+1) = [-2, physTS*(1+ksRatio)];
+        ALowBnd = zeros(7+numZones,7+2*numZones);
+        % Linear ineq maker (for defining VE props to be bigger than dt)
+        for ii = 7+(1:numZones)
+            ALowBnd(ii,aplacer(counter):aplacer(counter)+2) = [-1, physTS, physTS];
             counter = counter + 1;
         end
-        bLowBnd = zeros(8+numZones,1);
+        bLowBnd = zeros(7+numZones,1);
 
         % Use this is you want to define an upper and lower bound to the time constants for muscles. The lower bound is n*physTS, upper is tauU. Units in (s).
     %     n = 2; tauU = 1;
@@ -69,14 +70,18 @@ function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NW
     %     end
     %     beq = zeros(7+numZones,1);
     %%
-    ub = [repmat(20,1,7),1e3,repmat([50 1e3],1,numZones)];% b, ks, kp
-    lb = [zeros(1,7),1,repmat([1 1],1,numZones)];
-
+    ub = [repmat(20,1,7),repmat([100 1e3 1.74e4],1,numZones)];% b, kp, ks
+    lb = [zeros(1,7),repmat([1e-6 1 1],1,numZones)];
+    
     fun_pass = @(inVec) objFun_whole_leg_passive(inVec,NWmotion,mInfo,stimLevel,ts);
     pattOpts = optimoptions('patternsearch','UseParallel',true,'MaxTime',maxTime*60,...  
-        'Display','iter','SearchFcn','MADSPositiveBasis2N','InitialMeshSize',50,'UseCompleteSearch',true,'MeshExpansionFactor',2,'OutputFcn',@outfun);%'MaxTime',maxTime*60;,'MaxFunctionEvaluations',100;
-   % pattOpts = optimoptions('patternsearch','UseParallel',true,'InitialMeshSize',5000,'MaxTime',maxTime*60,...  
-    %    'Display','iter','OutputFcn',@outfun,'PlotFcn',@psplotbestf);
+        'Display','iter','SearchFcn','MADSPositiveBasis2N','InitialMeshSize',1,'UseCompleteSearch',true,'MeshExpansionFactor',4,'OutputFcn',@outfun);%'MaxTime',maxTime*60;,'MaxFunctionEvaluations',100;
+    
+    if ~(all(ALowBnd*initialPoint'<=bLowBnd) && all(initialPoint>=lb) && all(initialPoint<=ub))
+        bnd_violation = [all(ALowBnd*initialPoint'<=bLowBnd),all(initialPoint>=lb),all(initialPoint<=ub)]
+        warning('Something is wrong with your initial point, it violates bounds')
+        keyboard
+    end
     
     [passVals,fVal,~,output] = patternsearch(fun_pass,initialPoint,ALowBnd,bLowBnd,[],[],lb,ub,[],pattOpts);
 
@@ -96,12 +101,4 @@ function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NW
              otherwise
         end
    end
-
-    function [c,ceq] = ksRatio_nonlcon(x)
-        ksRatio = x(8);
-        physTS = .54e-3;
-        bs = x(9:2:end); kps = x(10:2:end);
-        c = ksRatio - 2.*(bs)./(physTS.*kps) + 1;
-        ceq = [];
-    end
 end

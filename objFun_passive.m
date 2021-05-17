@@ -1,16 +1,15 @@
 function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grade,stimID,stimLevel,numZones,muscZones)
-    stimVals = inVec(1:7); inVec = inVec(9:end);
+    stimVals = inVec(1:7); inVec = inVec(8:end);
     if length(inVec)==3
         inMat = repmat(inVec,numZones,1);
     else
-        inMat = reshape(inVec,2,numZones)';
+        inMat = reshape(inVec,3,numZones)';
     end
     mInds = find(contains(simText,'<Type>LinearHillMuscle</Type>'));
     for ii = 1:length(mInds)
         b = inMat(muscZones{ii,2},1);
         kp = inMat(muscZones{ii,2},2);
-        %ks = kp*inVec(8);
-        ks = kp*100;
+        ks = inMat(muscZones{ii,2},3);
         Fmax = double(extractBetween(string(simText{find(contains(simText(mInds(ii):end),'<MaximumTension>'),1)+mInds(ii)-1}),'>','</'));
         dampInd = find(contains(simText(mInds(ii):end),'<B>'),2)+mInds(ii)-1;
         ksInd = find(contains(simText(mInds(ii):end),'<Kse>'),1,'first')+mInds(ii)-1;
@@ -93,12 +92,13 @@ function [outVal,jointMotion] = objFun_passive(simText,NWmotion,inVec,joint2grad
         diff5 = NWmotion(182,:)-jointMotion(182,:);
         diff6 = NWmotion(171:218,:)-jointMotion(171:218,:);
         diff7 = NWmotion(313:minLen,:)-jointMotion(313:minLen,:);
-        diff8 = (NWmotion(325,:)-NWmotion(320,:))/(325-320)-(jointMotion(325,:)-jointMotion(320,:))/(325-320);
+        diff8 = NWmotion(171:minLen,:)-jointMotion(171:minLen,:);
+        diff9 = (NWmotion(325,:)-NWmotion(320,:))/(325-320)-(jointMotion(325,:)-jointMotion(320,:))/(325-320);
         
         sum_square = @(inMat) sum(sum(inMat.^2,2));
         
         if strcmp(joint2grade,'all')
-            outVec = [sum_square(diff6) sum_square(diff7)];
+            outVec = sum_square(diff8);
             outVecWt = outVec.*[1 1];
             outVal = sum(outVecWt);
         else

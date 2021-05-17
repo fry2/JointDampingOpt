@@ -1,4 +1,4 @@
-function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
+    function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_compAnkle_Standalone.asim';
     simPath = 'G:\My Drive\Rat\SynergyControl\Animatlab\SynergyWalking\SynergyControl_Standalone.asim';
     %simPath = 'C:\Users\fry16\OneDrive\Documents\JointDampingOpt\JointDampingOpt_heavyBones_Standalone.asim';
@@ -14,7 +14,7 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     [simText{find(contains(simText,'<CurrentType>Tonic</CurrentType>'))-2}] = deal('<Enabled>False</Enabled>');
 
     % Change the datachart time step to depend dt in order to align experimental frequency to simulation
-    [simText{contains(simText,'<TimeStep>0.00054</TimeStep>')}] = deal(['<TimeStep>',num2str(dt/10),'</TimeStep>']);
+    [simText{contains(simText,'<TimeStep>')}] = deal(['<TimeStep>',num2str(dt/10),'</TimeStep>']);
 
     % Extract parameters from the ASIM file
     parGet = {['<ID>ad-',muscName,'-ID</ID>'],6};
@@ -23,8 +23,7 @@ function [simText,stimID] = simText_editor(muscName,NWmotion,cPos,ts)
     for jj = 1:size(parGet,1)
         findPar = parGet{jj,1};
         outStr = simText{find(contains(simText,findPar))+parGet{jj,2}};
-        temp = extractBetween(outStr,'>','<');
-        parGetOut{jj,1} = temp{1};
+        parGetOut{jj,1} = char(extractBetween(string(outStr),'>','<'));
     end
     
     timeVec = 0:dt:((length(NWmotion)-1)*dt);

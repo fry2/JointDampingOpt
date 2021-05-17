@@ -15,10 +15,10 @@
 
     try 
         if input6zones
-            passVals = [pvStruct.pvGlobal6_stimVals,pvStruct.pvGlobal6_ksRatio,pvStruct.pvGlobal6];
+            passVals = [pvStruct.pvGlobal6_stimVals,pvStruct.pvGlobal6];
             pvG_grades_old = pvStruct.pvGlobal6_grades;
         else
-            passVals = [pvStruct.pvGlobal38_stimVals,pvStruct.pvGlobal38_ksRatio,pvStruct.pvGlobal38];
+            passVals = [pvStruct.pvGlobal38_stimVals,pvStruct.pvGlobal38];
             pvG_grades_old = pvStruct.pvGlobal38_grades;
         end
          
@@ -55,30 +55,42 @@
             temp = (reshapedJM{ii,jj}-meanMat(ii,:))+meanIntro;
             reshapedJM{ii,jj} = [temp(1:ts{ii,jj}.tcstart,:);maxTail];
         end
-    end
-    
+    end   
 %% Begin the Optimization process
     stimLevel = 20;
-    maxTimeTrial = 90; %in min
+    maxTimeTrial = 20; %in min
     time_predictor(maxTimeTrial);
-    %
+    % Blanket change parameter values by a factor. 9:3:end is kp, 10:3:end is ks
+%     for ii = 9:3:length(passVals)
+%         %passVals(ii) = .9*passVals(ii);
+%         passVals(ii+1) = .75*passVals(ii+1);
+%     end
+    
     [simText,stimID] = simText_editor(kinematic_muscle_name{2,1},reshapedJM{1},'on',ts{1});
-%     passVals = [passVals(1:7),100,passVals(8:end)];
-%     passVals([1 3 4 6]) = passVals([1 3 4 6]).*1.2;
-%     passVals = passVals(9:end);
-%     passVals = [45,passVals];
-    %passVals(1:7) = 20; passVals(8) = 228; passVals(9:20) = repmat([50 100],1,6);
-    %passVals = [passVals(1:7),100,passVals(17:end)];
-    passVals(8) = 100;
+    mTemp = zoning_sorter(simText,6);
+    
+    % Only change hip joint muscle Ks values
+%     passMat = reshape(passVals(8:end)',[3 38])';
+%     hipmuscs1 = cell2mat(mTemp(:,2)) == 1;
+%     hipmuscs2 = cell2mat(mTemp(:,2)) == 2;
+%     hipmuscs4 = cell2mat(mTemp(:,2)) == 4;
+%     passMat(hipmuscs1,2) = .5*passMat(hipmuscs1,2);
+%     passMat(hipmuscs2,2) = .5*passMat(hipmuscs2,2);
+%     passMat(hipmuscs4,2) = .5*passMat(hipmuscs4,2);
+% %     passMat(hipmuscs1,3) = 2*passMat(hipmuscs1,3);
+% %     passMat(hipmuscs2,3) = 2*passMat(hipmuscs2,3);
+% %     passMat(5,1) = 8; passMat(5,2) = 1;
+% %     passMat(33,1) = 3; passMat(33,2) = 1;
+%     passVals(8:end) = reshape(passMat',[1 numel(passMat)]);
+    
     [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,reshapedJM,passVals,stimLevel,maxTimeTrial,input6zones,out6zones,ts);
-    stimVals = passVals(1:7); ksRatio = passVals(8); passVals = passVals(9:end);
+    stimVals = passVals(1:7); passVals = passVals(8:end);
 %% Now that we have passive values, we need to analyze their effectiveness at recreating NW waveforms
     outJM = cell(1,7); pvG_grades_new = zeros(1,7);
     if 0
         if 1
             passVals = pvStruct.pvGlobal38;
             stimVals = pvStruct.pvGlobal38_stimVals;
-            ksRatio = pvStruct.pvGlobal38_ksRatio;
             mInfo = zoning_sorter(simText,38);
         else
 %             load('goodPassVals3.mat','goodStimVals6','goodPassVals6')
@@ -87,7 +99,6 @@
 %             passVals = goodPassVals6;
             passVals = pvStruct.pvGlobal6;
             stimVals = pvStruct.pvGlobal6_stimVals;
-            ksRatio = pvStruct.pvGlobal6_ksRatio;
             mInfo = zoning_sorter(simText,6);
         end
     end
@@ -97,15 +108,15 @@
             [simText,stimID] = simText_editor(kinematic_muscle_name{2,ii},NWmotion_temp,'on',ts{ii});
             numZones = length(unique(cell2mat(mInfo(:,2))));
 %             [pvG_grades_new(ii),jm] = objFun_passive(simText,NWmotion_temp,passVals,'all',stimID,stimVals(ii),numZones,mInfo);
-            [pvG_grades_new(ii),jm] = objFun_passive(simText,NWmotion_temp,[stimVals,ksRatio,passVals],'all',stimID,ii,numZones,mInfo);
+            [pvG_grades_new(ii),jm] = objFun_passive(simText,NWmotion_temp,[stimVals,passVals],'all',stimID,ii,numZones,mInfo);
             outJM{ii} = jm;
         else
             outJM{ii} = NaN(size(NWmotion_temp));
         end
     end
 %% Determine whether or not to save the new values by comparing new scores to old scores
-    newScore = trapz(pvG_grades_new);
-    oldScore = trapz(pvG_grades_old);
+    newScore = sum(pvG_grades_new);
+    oldScore = sum(pvG_grades_old);
     telapsed = toc(tstart);
     if newScore < oldScore
         disp(['New score (',num2str(newScore),') is better than old score (',num2str(oldScore),'), SAVING new values (',num2str(telapsed/60),' min).'])
@@ -113,7 +124,6 @@
             %NWmotion = reshapedJM{1};
             [projText] = projText_editor(passVals,mInfo,stimID,reshapedJM{1}); 
         pvStruct.(['pvGlobal',num2str(numZones)]) = passVals;
-        pvStruct.(['pvGlobal',num2str(numZones),'_ksRatio']) = ksRatio;
         pvStruct.(['pvGlobal',num2str(numZones),'_stimVals']) = stimVals;
         pvStruct.(['pvGlobal',num2str(numZones),'_grades']) = pvG_grades_new;
         save('pvStruct.mat','pvStruct')
@@ -176,7 +186,7 @@ return
         title([kinematic_muscle_name{1,ii},' ',num2str(round(pvG_grades_new(ii)))])
     end
 %% Scatter plot of muscle values
-    figure
+    figure('Position',[962,2,958,994])
     cm = [0,1,0;...
           1,0,0;...
           0.9216,0.8235,0.2039;...
@@ -185,59 +195,61 @@ return
           0,1,1];
     switch 0
         case 0
-            muscVals = reshape(passVals,2,numZones)';
-            if length(passVals)==2*6
+            muscVals = reshape(passVals,3,numZones)';
+            if length(passVals)==3*6
                 mTemp = cell(6,2);mTemp(:,2) = num2cell(1:6);
             else
                 mTemp = zoning_sorter(simText,6);
             end
         case 1
-            muscVals = reshape(pvStruct.pvGlobal38,2,38)';
+            muscVals = reshape(pvStruct.pvGlobal38,3,38)';
             mTemp = zoning_sorter(simText,6);
         case 2
-            muscVals = reshape(pvStruct.pvGlobal6,2,6)';
+            muscVals = reshape(pvStruct.pvGlobal6,3,6)';
             mTemp = cell(6,2);mTemp(:,2) = num2cell(1:6);
         otherwise
             error('error')
     end
     for ii = 1:size(muscVals,1)
-        scatter3(ksRatio*muscVals(ii,2),muscVals(ii,2),muscVals(ii,1),36,cm(mTemp{ii,2},:),'o','LineWidth',10)
+        scatter3(muscVals(ii,3),muscVals(ii,2),muscVals(ii,1),36,cm(mTemp{ii,2},:),'o','LineWidth',10)
         hold on
     end
     pbaspect([1 1 1])
-    view([-43 18])
+    view([-47 26])
     set(gca,'xscale','log','yscale','log');
     title('Viscoelastic Muscle Parameters','FontSize',18)
     zlabel('B (Ns/m)','FontSize',18); xlabel('Ks (N/m)','FontSize',18), ylabel('Kp (N/m)','FontSize',18)
 %% Plot value changes over time
-    figure;
+    figure('Position',[962,2,958,994])
     cm = [0,1,0;1,0,0;0.9216,0.8235,0.2039;0,0,1;1,0,1;0,1,1];
     subplot(6,1,1)
-        plot(output.trialX(1:7,:)')
+        plot(output.trialX(1:7,:)-output.trialX(1:7,1))
         title('Stimulus Change')
     subplot(6,1,2)
         count = 1;
-        for ii = 9:2:size(output.trialX,1)
-            plot(output.trialX(ii,:)','Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
+        for ii = 8:3:size(output.trialX,1)
+            plot(output.trialX(ii,:)'-output.trialX(ii,1),'Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
         end
         title('B Change')
     subplot(6,1,3)
         count = 1;
-        for ii = 10:2:size(output.trialX,1)
-            plot(output.trialX(ii,:)','Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
+        for ii = 9:3:size(output.trialX,1)
+            plot(output.trialX(ii,:)'-output.trialX(ii,1),'Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
         end
         title('Kp Change')
     subplot(6,1,4)
-        plot(output.trialX(8,:))
-        title('Ks Ratio')
+        count = 1;
+        for ii = 10:3:size(output.trialX,1)
+            plot(output.trialX(ii,:)'-output.trialX(ii,1),'Color',cm(mTemp{count,2},:)); hold on; count = count + 1;
+        end
+        title('Ks Change')
     subplot(6,1,5)
         plot(output.trialF)
         title('All Function Fval')
     subplot(6,1,6)
         plot(history.fval,'LineWidth',3)
         title('Iteration Fval')
-
-%%
+%% Time Predictor Sub Function
 function time_predictor(maxTime)
     [h,m] = hms(datetime('now')+minutes(maxTime)+minutes(.1*maxTime));
     if h > 12

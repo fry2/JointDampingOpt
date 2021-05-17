@@ -7,11 +7,11 @@
 <ClassName>LicensedAnimatGUI.Forms.Charts.LineChart</ClassName>
 <AutoCollectInterval>True</AutoCollectInterval>
 <CollectDataInterval Value="0.54" Scale="milli" Actual="0.00054"/>
-<CollectTimeWindow Value="11" Scale="None" Actual="11"/>
+<CollectTimeWindow Value="2.649" Scale="None" Actual="2.649"/>
 <UpdateDataInterval Value="200" Scale="milli" Actual="0.2"/>
 <SetStartEndTime>True</SetStartEndTime>
 <CollectStartTime Value="0" Scale="None" Actual="0"/>
-<CollectEndTime Value="10" Scale="None" Actual="10"/>
+<CollectEndTime Value="1.649" Scale="None" Actual="1.649"/>
 <AxisList>
 <Axis>
 <AssemblyFile>LicensedAnimatGUI.dll</AssemblyFile>
@@ -78,7 +78,7 @@
 </AxisList>
 <SaveDataWhenClosed>False</SaveDataWhenClosed>
 <UpdateChartAtEnd>True</UpdateChartAtEnd>
-<PointsToKeep>20371</PointsToKeep>
+<PointsToKeep>4906</PointsToKeep>
 <YAxisOffset>0</YAxisOffset>
 <GraphConfig ByteCount="8971"/>
 </Form>
