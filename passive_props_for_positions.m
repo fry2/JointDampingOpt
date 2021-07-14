@@ -58,7 +58,7 @@
     end   
 %% Begin the Optimization process
     stimLevel = 20;
-    maxTimeTrial = 20; %in min
+    maxTimeTrial = 90; %in min
     time_predictor(maxTimeTrial);
     % Blanket change parameter values by a factor. 9:3:end is kp, 10:3:end is ks
 %     for ii = 9:3:length(passVals)
@@ -70,7 +70,7 @@
     mTemp = zoning_sorter(simText,6);
     
     % Only change hip joint muscle Ks values
-%     passMat = reshape(passVals(8:end)',[3 38])';
+     passMat = reshape(passVals(8:end)',[3 38])';
 %     hipmuscs1 = cell2mat(mTemp(:,2)) == 1;
 %     hipmuscs2 = cell2mat(mTemp(:,2)) == 2;
 %     hipmuscs4 = cell2mat(mTemp(:,2)) == 4;
@@ -81,7 +81,31 @@
 % %     passMat(hipmuscs2,3) = 2*passMat(hipmuscs2,3);
 % %     passMat(5,1) = 8; passMat(5,2) = 1;
 % %     passMat(33,1) = 3; passMat(33,2) = 1;
-%     passVals(8:end) = reshape(passMat',[1 numel(passMat)]);
+    %musc2reduce = [1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;30;31;32;33;34;35;36;37;38]; % all hip affectors
+    musc2reduce = [1;4;5;6;7;9;10;11;14;15;30;31;32;33;34;35;37]; % hip affectors generating positive moments
+    musc2reduce = [2;3;8;12;13;36;38]; % hip affectors generating negative moments
+    %   % Change Kp
+%     for ii = 1:length(musc2reduce)
+%         newKp = .2*passMat(musc2reduce(ii),2);
+%         if newKp > (passMat(musc2reduce(ii),1)/.54e-3)-passMat(musc2reduce(ii),3)
+%             newKp = .9999*(passMat(musc2reduce(ii),1)/.54e-3)-passMat(musc2reduce(ii),3);
+%         elseif newKp < 1
+%             newKp = 1;
+%         end
+%         passMat(musc2reduce(ii),2) = newKp;
+%     end
+%     % Change Ks
+%         for ii = 1:length(musc2reduce)
+%             newKs = .2*passMat(musc2reduce(ii),3);
+%             if newKs > (passMat(musc2reduce(ii),1)/.54e-3)-passMat(musc2reduce(ii),2)
+%                 newKs = .9999*(passMat(musc2reduce(ii),1)/.54e-3)-passMat(musc2reduce(ii),2);
+%             elseif newKs < 1
+%                 newKs = 1;
+%             end
+%             passMat(musc2reduce(ii),3) = newKs;
+%         end
+%         passMat(19,3) = passMat(19,3)*1e-3;
+%         passVals(8:end) = reshape(passMat',[1 numel(passMat)]);
     
     [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,reshapedJM,passVals,stimLevel,maxTimeTrial,input6zones,out6zones,ts);
     stimVals = passVals(1:7); passVals = passVals(8:end);

@@ -70,12 +70,17 @@ function [passVals,mInfo,fVal,history,output] = passive_opt_for_zones(simText,NW
     %     end
     %     beq = zeros(7+numZones,1);
     %%
+    ksmax = initialPoint(10:3:end)';
     ub = [repmat(20,1,7),repmat([100 1e3 1.74e4],1,numZones)];% b, kp, ks
+    for ii = 10:3:length(ub)
+        ub(ii) = 1.1*initialPoint(ii);
+    end
     lb = [zeros(1,7),repmat([1e-6 1 1],1,numZones)];
     
     fun_pass = @(inVec) objFun_whole_leg_passive(inVec,NWmotion,mInfo,stimLevel,ts);
     pattOpts = optimoptions('patternsearch','UseParallel',true,'MaxTime',maxTime*60,...  
-        'Display','iter','SearchFcn','MADSPositiveBasis2N','InitialMeshSize',1,'UseCompleteSearch',true,'MeshExpansionFactor',4,'OutputFcn',@outfun);%'MaxTime',maxTime*60;,'MaxFunctionEvaluations',100;
+        'Display','iter','SearchFcn','MADSPositiveBasis2N','InitialMeshSize',5,...
+        'UseCompleteSearch',true,'MeshExpansionFactor',2,'OutputFcn',@outfun);%'MaxTime',maxTime*60;,'MaxFunctionEvaluations',35;
     
     if ~(all(ALowBnd*initialPoint'<=bLowBnd) && all(initialPoint>=lb) && all(initialPoint<=ub))
         bnd_violation = [all(ALowBnd*initialPoint'<=bLowBnd),all(initialPoint>=lb),all(initialPoint<=ub)]
